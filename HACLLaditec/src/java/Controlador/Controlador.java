@@ -4,8 +4,12 @@
  */
 package Controlador;
 
+import Interfaces.crudPedidoVenta;
+import Interfaces.crudRepuesto;
+import Interfaces.crudUsuarios;
 import Modelo.*;
 import ModeloDAO.*;
+
 /*
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -69,16 +73,14 @@ public class Controlador extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession sesion = request.getSession(true);
-        DetalleBolVenta dbv = new DetalleBolVenta();
-        DetalleBolVentaDAO vdao = new DetalleBolVentaDAO();
+   
         PedidoVenta ped = new PedidoVenta();
-        PedidoVentaDAO dao = new PedidoVentaDAO();
+        crudPedidoVenta dao = new PedidoVentaDAO();
         Repuesto rep = new Repuesto();
-        RepuestoDAO daorep = new RepuestoDAO();
+        crudRepuesto daorep = new RepuestoDAO();
         Usuario usu = new Usuario();
-        UsuariosDAO udao = new UsuariosDAO();
-        Comentarios com = new Comentarios();
-        ComentariosDAO cdao = new ComentariosDAO();
+        crudUsuarios udao = new UsuariosDAO();
+
 
         String acceso = "";
         String action = request.getParameter("accion");
@@ -125,7 +127,6 @@ public class Controlador extends HttpServlet {
                         ped.setFecha(request.getParameter("txtFecha"));
                         ped.setEstado(request.getParameter("txtEstado"));
                         ped.setTxrid(request.getParameter("txtTxrid"));
-                        
 
                         if (dao.edit(ped) == true) {
                             System.out.println("se ha Editado correctamente");
@@ -171,91 +172,6 @@ public class Controlador extends HttpServlet {
                     } catch (Exception e) {
                         System.out.println(e);
                     }
-                }
-                break;
-
-            case "ListarDetalleBolVenta":
-                acceso = "VistaDetalleBolVenta/index.jsp";
-                break;
-            case "AgregarDetalle":
-
-                acceso = "VistaDetalleBolVenta/agregarDetalleBolVenta.jsp";
-                if (request.getParameter("AgregarDetalleDB") != null) {
-                    try {
-                        dbv.setIddetalleboleta(Integer.parseInt(request.getParameter("txtIddetalleboleta")));
-                        dbv.setFkserieboleta(request.getParameter("txtfkserieboleta"));
-                        dbv.setFknroboleta(Integer.parseInt(request.getParameter("txtfknroboleta")));
-                        dbv.setFkidrepuesto(Integer.parseInt(request.getParameter("txtfkidrepuesto")));
-                        dbv.setCantidad(Integer.parseInt(request.getParameter("txtcantidad")));
-                        dbv.setImporte(Double.parseDouble(request.getParameter("txtimporte")));
-                        
-                        if (vdao.add(dbv) ) {
-                            System.out.println("se ha Agregado correctamente");
-                        } else {
-                            System.out.println("error de base de datos");
-                        }
-
-                        acceso = "VistaDetalleBolVenta/index.jsp";
-
-                    } catch (Exception e) {
-                        System.out.println(e);
-                    }
-
-                }
-                break;
-            case "EditarDetalleBolVenta":
-
-                acceso = "VistaDetalleBolVenta/editarDetalleBolVenta.jsp";
-                request.setAttribute("iddbv", request.getParameter("txtiddetalle"));
-                if (request.getParameter("EditarDetalleDB") != null) {
-                    try {
-                        dbv.setIddetalleboleta(Integer.parseInt(request.getParameter("txtIddetalleboleta")));
-                        dbv.setFkserieboleta(request.getParameter("txtfkserieboleta"));
-                        dbv.setFknroboleta(Integer.parseInt(request.getParameter("txtfknroboleta")));
-                        dbv.setFkidrepuesto(Integer.parseInt(request.getParameter("txtfkidrepuesto")));
-                        dbv.setCantidad(Integer.parseInt(request.getParameter("txtcantidad")));
-                        dbv.setImporte(Double.parseDouble(request.getParameter("txtimporte")));
-
-                        if (vdao.edit(dbv) == true) {
-                            System.out.println("se ha Editado correctamente");
-                        } else {
-                            System.out.println("error de base de datos");
-                        }
-
-                        acceso = "VistaDetalleBolVenta/index.jsp";
-
-                    } catch (Exception e) {
-                        System.out.println(e);
-                    }
-
-                }
-                break;
-
-            case "listarComentarios":
-                acceso = "testimonial.jsp";
-                break;
-            case "AgregarComentarios":
-
-                acceso = "agregarComentarios.jsp";
-                if (request.getParameter("AgregarComentariosDB") != null) {
-                    try {
-
-                        com.setNombre(request.getParameter("txtnombre"));
-                        com.setDescripcion(request.getParameter("txtdescripcion"));
-                        com.setCalificacion(Integer.parseInt(request.getParameter("txtcalificacion")));
-
-                        if (cdao.add(com) == true) {
-                            System.out.println("se ha Agregado correctamente");
-                        } else {
-                            System.out.println("error de base de datos");
-                        }
-
-                        acceso = "testimonial.jsp";
-
-                    } catch (Exception e) {
-                        System.out.println(e);
-                    }
-
                 }
                 break;
 
@@ -313,62 +229,6 @@ public class Controlador extends HttpServlet {
                     }
 
                 }
-                break;
-
-            case "MandarACarrito":
-
-                
-                int idrepuesto = Integer.parseInt(request.getParameter("idRepuesto"));
-                int cantidad = 1;
-
-                if (sesion.getAttribute("fkidrolusuario") == null) {
-                    acceso = "Login.jsp";
-                } else {
-                    List<CarritoCompra> articulos = sesion.getAttribute("carrito") == null ? new ArrayList<>() : (List) sesion.getAttribute("carrito");
-                    boolean flag = false;
-                    if (!articulos.isEmpty()) {
-                        for (CarritoCompra a : articulos) {
-                            if (idrepuesto == a.getIdProducto()) {
-                                a.setCantidad(a.getCantidad() + cantidad);
-
-                                flag = true;
-                                break;
-                            }
-                        }
-                    }
-
-                    if (!flag) {
-                        articulos.add(new CarritoCompra(idrepuesto, cantidad));
-                    }
-                    System.out.println((articulos.get(0).getIdProducto()) + " " + (articulos.get(0).getCantidad()));
-                    sesion.setAttribute("carrito", articulos);
-                    acceso = "product.jsp";
-
-                }
-                break;
-            case "ListarProductos":
-                acceso = "product.jsp";
-                break;
-            case "borrarElementoCarrito":
-                int id2repuesto = Integer.parseInt(request.getParameter("idRepuesto"));
-
-                List<CarritoCompra> articulos = sesion.getAttribute("carrito") == null ? new ArrayList<>() : (List) sesion.getAttribute("carrito");
-
-                for (int i = 0; i < articulos.size(); i++) {
-                    if (id2repuesto == articulos.get(i).getIdProducto()) {
-                        articulos.remove(i);
-                    }
-                }
-                acceso = "carrito.jsp";
-                break;
-            case "consultarReportes":
-                acceso = "administrar.jsp";
-                break;
-            case "verGraficas":
-                acceso = "charts.jsp";
-                break;
-            case "ListarBoletas":
-                acceso = "VistaBoletaVenta/index.jsp";
                 break;
             case "ListarRepuestos":
                 acceso = "VistaRepuesto/index.jsp";
@@ -467,34 +327,25 @@ public class Controlador extends HttpServlet {
 
                         usu = logindao.loginUsuario(user, clave);
                         if (usu != null) {
-                            
 
                             if (usu.getEstado().equalsIgnoreCase("A")) {
-                                if (usu.getFkidrol() == 2) {
-                                    acceso = "administrar.jsp";
-                                    sesion.setAttribute("fkidrolusuario", usu.getFkidrol());
-                                    sesion.setAttribute("idusuario", usu.getIdusuario());
-                                    sesion.setAttribute("nomusuariologin", usu.getNomusuario());
-                                } else if (usu.getFkidrol() == 1) {
-                                    acceso = "product.jsp";
-                                    sesion.setAttribute("fkidrolusuario", usu.getFkidrol());
-                                    sesion.setAttribute("idusuario", usu.getIdusuario());
-                                    sesion.setAttribute("nomusuariologin", usu.getNomusuario());
-                                } else {
-                                    acceso = "Login.jsp";
-                                }
+
+                                acceso = "cruds.jsp";
+                                sesion.setAttribute("fkidrolusuario", usu.getFkidrol());
+                                sesion.setAttribute("idusuario", usu.getIdusuario());
+                                sesion.setAttribute("nomusuariologin", usu.getNomusuario());
+
                             }
 
-                        }else{
+                        } else {
                             userdao.Updateintentos(user);
-                            int intentos= userdao.sacarintentos(user);
-                            
+                            int intentos = userdao.sacarintentos(user);
+
                             if (intentos == 3) {
                                 userdao.Updatebloqueos(user);
                                 userdao.DesactivarCuenta(user);
                             }
-                            
-                            
+
                         }
 
                     } catch (Exception e) {

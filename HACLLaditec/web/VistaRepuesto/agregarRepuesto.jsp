@@ -102,7 +102,7 @@
                                         <div class="my-4"></div>
 
                                         <div class="row">
-                                            <label class="col-sm-3 form-label">Imagen</label>
+                                            <label class="col-sm-3 form-label">Extension de la Imagen</label>
                                             <div class="col-sm-9">
                                                 <input class="form-control" type="text" name="txtImagen" required>
                                             </div>
