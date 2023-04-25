@@ -1,12 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package ModeloDAO;
-
 import Config.conexion;
 import Interfaces.crudUsuarios;
-import Modelo.DetalleBolVenta;
 import Modelo.Usuario;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,10 +10,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author 
- */
 public class UsuariosDAO implements crudUsuarios{
     
     conexion cn=new conexion();
@@ -82,22 +72,6 @@ public class UsuariosDAO implements crudUsuarios{
         return usu;
     }
     
-    public ResultSet listarboletas(int id) {
-        String sql="SELECT bol.fkidpedido,bol.serieboleta,bol.nroboleta,ped.estado,bol.total,bol.impuesto,ped.txrid,ped.hash,ped.lacchainid FROM tbusuario usu JOIN tbpedidoventa ped ON usu.idusuario=ped.fkidusuario JOIN tbboletaventa bol ON bol.fkidpedido=ped.idpedidoventa WHERE idusuario="+id;
-        Usuario usu=new Usuario();
-        try{
-            con=(Connection) cn.getConnection();
-            ps=con.prepareStatement(sql);
-            rs=ps.executeQuery();
-            return rs;
-            
-           
-        }catch(SQLException e){
-            System.out.println("error"+e.toString());
-            return null;
-        }
-        
-    }
     
     public boolean Updateintentos(String email) {
          
@@ -174,10 +148,7 @@ public class UsuariosDAO implements crudUsuarios{
         }
         
     }
-    
-    
-    
-    
+
     @Override
     public boolean add(Usuario usu) {
                 String sql="insert into tbusuario(nomusuario,email,clave,fkidrol,estado) values('"+usu.getNomusuario()+"','"+usu.getEmail()+"','"+usu.getClave()+"',"+usu.getFkidrol()+",'"+usu.getEstado()+"')";
@@ -211,7 +182,3 @@ public class UsuariosDAO implements crudUsuarios{
         return true;
     }
     }
-
-
-
-

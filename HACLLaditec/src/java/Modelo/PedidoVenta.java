@@ -1,12 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Modelo;
-
-
 public class PedidoVenta {
-    
     private int idpedido;
     private int idusuario;
     private String fecha;
@@ -38,9 +31,6 @@ public class PedidoVenta {
     public void setTxrid(String txrid) {
         this.txrid = txrid;
     }
-    
-    
-
     
     public int getIdpedido() {
         return idpedido;
@@ -84,12 +74,6 @@ public class PedidoVenta {
         this.txrid = txrid;
     }
 
-    
-    
     public PedidoVenta() {
     }
-    
-    
-    
-    
 }

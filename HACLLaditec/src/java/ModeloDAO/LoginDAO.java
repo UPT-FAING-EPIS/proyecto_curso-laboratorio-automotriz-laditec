@@ -1,16 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package ModeloDAO;
 
-import Modelo.*;
 import Config.*;
 import Interfaces.interfazLogin;
 import Modelo.Usuario;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
 
 public class LoginDAO implements interfazLogin{
     conexion cn=new conexion();
@@ -42,8 +35,6 @@ public class LoginDAO implements interfazLogin{
                 
                 return objuser;
             }
-            
-            
             }
             
         }catch(SQLException e){
@@ -51,5 +42,4 @@ public class LoginDAO implements interfazLogin{
         }
         return null;
     }
-    
 }

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package ModeloDAO;
 import Interfaces.crudPedidoVenta;
 import Modelo.PedidoVenta;
@@ -9,10 +5,7 @@ import java.util.*;
 import java.sql.*;
 import Config.*;
 import java.util.ArrayList;
-/**
- *
- * @author Helbert Condori Loayza
- */
+
 public class PedidoVentaDAO implements crudPedidoVenta{
     
     conexion cn=new conexion();
@@ -21,7 +14,6 @@ public class PedidoVentaDAO implements crudPedidoVenta{
     ResultSet rs;
     Statement st;
     
-   
     @Override
     public List listar() {
         ArrayList<PedidoVenta> list=new ArrayList<>();
@@ -145,5 +137,4 @@ public class PedidoVentaDAO implements crudPedidoVenta{
         }
         return true;
     }
-    
 }

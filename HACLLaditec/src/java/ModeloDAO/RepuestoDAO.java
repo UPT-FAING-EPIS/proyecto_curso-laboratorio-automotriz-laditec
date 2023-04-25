@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package ModeloDAO;
 
 import Config.conexion;
@@ -15,10 +11,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author 
- */
 public class RepuestoDAO implements crudRepuesto{
     conexion cn=new conexion();
     Connection con;
@@ -118,7 +110,5 @@ public class RepuestoDAO implements crudRepuesto{
             return false;
         }
         return true;
-
     }
-    
 }

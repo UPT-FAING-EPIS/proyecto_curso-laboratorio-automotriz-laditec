@@ -1,15 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Modelo;
-
-
 public class Usuario {
-
     public Usuario() {
     }
-
     public Usuario(int idusuario, String nomusuario, String email, String clave, int fkidrol, String estado,int intentos) {
         this.idusuario = idusuario;
         this.nomusuario = nomusuario;
@@ -75,7 +67,6 @@ public class Usuario {
     public void setIntentos(int intentos) {
         this.intentos = intentos;
     }
-
     private int idusuario;
     private String nomusuario;
     private String email;
@@ -83,5 +74,4 @@ public class Usuario {
     private int  fkidrol;
     private String estado;
     private int intentos;
-
 }
