@@ -14,30 +14,34 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
- * @author 
+ * @author
  */
-public class RepuestoDAO implements crudRepuesto{
-    conexion cn=new conexion();
+public class RepuestoDAO implements crudRepuesto {
+
+    conexion cn = new conexion();
     Connection con;
     PreparedStatement ps;
     ResultSet rs;
     Statement st;
-    
+    private static Logger logger = Logger.getLogger("MyLog");
+
     @Override
     public List listar() {
-    
-        ArrayList<Repuesto> list=new ArrayList<>();
-        String sql="select * from tbrepuesto";
-        try{
-            con=(Connection) cn.getConnection();
-            ps=con.prepareStatement(sql);
-            rs=ps.executeQuery();
-            
-            while(rs.next()){
-                Repuesto rep=new Repuesto();
+
+        ArrayList<Repuesto> list = new ArrayList<>();
+        String sql = "select * from tbrepuesto";
+        try {
+            con = cn.getConnection();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Repuesto rep = new Repuesto();
                 rep.setIdrepuesto(Integer.parseInt(rs.getString("idrepuesto")));
                 rep.setFkidalmacen(Integer.parseInt(rs.getString("fkidalmacen")));
                 rep.setFkidestado(Integer.parseInt(rs.getString("fkidestado")));
@@ -48,8 +52,8 @@ public class RepuestoDAO implements crudRepuesto{
                 rep.setCantidad(Integer.parseInt(rs.getString("Cantidad")));
                 list.add(rep);
             }
-        }catch(SQLException e){
-            System.out.println("error"+e.toString());
+        } catch (SQLException e) {
+            logger.log(Level.WARNING, e.toString());
         }
         return list;
     }
@@ -57,15 +61,17 @@ public class RepuestoDAO implements crudRepuesto{
     @Override
     public Repuesto list(int id) {
 
-        String sql="select * from tbrepuesto where idrepuesto= "+id;
-        Repuesto rep=new Repuesto();
-        try{
-            con=(Connection) cn.getConnection();
-            ps=con.prepareStatement(sql);
-            rs=ps.executeQuery();
-            
-            while(rs.next()){
-               
+        String sql = "select * from tbrepuesto where idrepuesto= ?";
+        Repuesto rep = new Repuesto();
+        try {
+            con = cn.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, id);
+
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+
                 rep.setIdrepuesto(Integer.parseInt(rs.getString("idrepuesto")));
                 rep.setFkidalmacen(Integer.parseInt(rs.getString("fkidalmacen")));
                 rep.setFkidestado(Integer.parseInt(rs.getString("fkidestado")));
@@ -75,11 +81,11 @@ public class RepuestoDAO implements crudRepuesto{
                 rep.setPreciounitario(Double.parseDouble(rs.getString("preciounitario")));
                 rep.setCantidad(Integer.parseInt(rs.getString("cantidad")));
             }
-           
-        }catch(SQLException e){
-            System.out.println("error"+e.toString());
+
+        } catch (SQLException e) {
+            logger.log(Level.WARNING, e.toString());
             return null;
-        }        
+        }
         return rep;
 
     }
@@ -87,38 +93,58 @@ public class RepuestoDAO implements crudRepuesto{
     @Override
     public boolean add(Repuesto rep) {
 
-        String sql="insert into tbrepuesto values( "+rep.getIdrepuesto()+" , "+rep.getFkidalmacen()+" , "+rep.getFkidestado()+" ,'"+rep.getNombre()+"' ,"+rep.getFkidcategoria()+",'"+rep.getImagen()+"',  "+rep.getPreciounitario()+","+rep.getCantidad()+")";
-        
-        try{
-            con=(Connection) cn.getConnection();
-            st=con.createStatement();
-            st.executeUpdate(sql);
-                   
-        }catch(SQLException e){
-            System.out.println("error"+e.toString());
-            return false;
-        }
-        return true;
-        
+        String sql = "insert into tbrepuesto values( ? , ? , ? , ? , ? , ? , ? , ? )";
+        try {
+            con = cn.getConnection();
+            ps = con.prepareStatement(sql);
 
+            ps.setInt(1, rep.getIdrepuesto());
+            ps.setInt(2, rep.getFkidalmacen());
+            ps.setInt(3, rep.getFkidestado());
+            ps.setString(4, rep.getNombre());
+            ps.setInt(5, rep.getFkidcategoria());
+            ps.setString(6, rep.getImagen());
+            ps.setDouble(7, rep.getPreciounitario());
+            ps.setInt(8, rep.getCantidad());
+            
+
+            ps.executeUpdate();
+
+        } catch (SQLException ex) {
+            logger.log(Level.WARNING, ex.toString());
+        }
+
+        return true;
     }
 
     @Override
     public boolean edit(Repuesto rep) {
 
-        String sql="update tbrepuesto set Cantidad="+rep.getCantidad()+", fkidalmacen="+rep.getFkidalmacen()+", fkidestado= "+rep.getFkidestado()+",nombre='"+rep.getNombre()+"',fkidcategoria="+rep.getFkidcategoria()+",imagen='"+rep.getImagen()+"',preciounitario="+rep.getPreciounitario()+" where idrepuesto="+rep.getIdrepuesto();
-        
-        try{
-            con=(Connection) cn.getConnection();
-            st=con.createStatement();
-            st.executeUpdate(sql);
-                   
-        }catch(SQLException e){
-            System.out.println("error"+e.toString());
+        String sql = "update tbrepuesto set Cantidad=?, fkidalmacen=?, fkidestado= ?,nombre=?,fkidcategoria=?,imagen=?, preciounitario=? where idrepuesto=?";
+
+        try {
+            con = cn.getConnection();
+            
+            ps = con.prepareStatement(sql);
+            
+            ps.setInt(1, rep.getCantidad());
+            ps.setInt(2, rep.getFkidalmacen());
+            ps.setInt(3, rep.getFkidestado());
+            ps.setString(4, rep.getNombre());
+            ps.setInt(5, rep.getFkidcategoria());
+            ps.setString(6, rep.getImagen());
+            ps.setDouble(7, rep.getPreciounitario());
+            ps.setInt(8, rep.getIdrepuesto());
+            
+            ps.executeUpdate();
+            
+
+        } catch (SQLException e) {
+            logger.log(Level.WARNING, e.toString());
             return false;
         }
         return true;
 
     }
-    
+
 }

@@ -54,28 +54,7 @@
                   </a>
                   </div>
               </div>
-              <div class="col-lg-3 cardsss col-sm-6">
-                  <div class="row">
-                    <a class="cartext" href="Controlador?accion=ListarBoletas">
-                      <div class="card border-0 shadow rounded-xs pt-5">
-                          <div class="card-body"> <i class="iconocrud fa fa-file-text-o icon-xl icon-cyan mb-3"></i>
-                              <h4 class="mt-4 mb-3">Boletas</h4>
-                          </div>
-                      </div>
-                  </a>
-                  </div>
-              </div>  
-              <div class="col-lg-3 cardsss col-sm-6">
-                  <div class="row">
-                    <a class="cartext" href="Controlador?accion=ListarDetalleBolVenta">
-                      <div class="card border-0 shadow rounded-xs pt-5">
-                          <div class="card-body"> <i class=" iconocrud fa fa-handshake-o icon-lg icon-purple mb-3"></i>
-                              <h4 class="mt-4 mb-3">Detalle Boleta</h4>
-                          </div>
-                      </div>
-                  </a>
-                  </div>
-              </div>
+              
               <div class="col-lg-3 cardsss col-sm-6">
                   <div class="row">
                     <a class="cartext" href="Controlador?accion=ListarRepuestos">
