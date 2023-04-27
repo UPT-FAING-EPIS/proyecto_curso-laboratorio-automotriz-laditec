@@ -107,7 +107,7 @@
                                         </div>
                                         <div class="my-4"></div>
                                         <div class="row">
-                                            <label class="col-sm-3 form-label">Imagen</label>
+                                            <label class="col-sm-3 form-label">Extension de la Imagen</label>
                                             <div class="col-sm-9">
                                                 <input class="form-control" type="text" value="<%=rep.getImagen()%>"  name="txtImagen" required >
                                             </div>
@@ -140,16 +140,7 @@
                                         </div>
                                         <!--  -->
                                     </form>     
-                                    <form action="CustomServlet" method="post" enctype="multipart/form-data" >
-
-                                        <div class="row">
-                                            <label for="formFile" class="form-label">Subir Imagen</label>
-                                            <input class="form-control" name="txtfile" type="file" id="formFile">
-                                        </div>
-                                        <input type="hidden" name="txtid" value="<%=rep.getIdrepuesto()+3%>">
-                                        <input type="hidden" name="txtformato" value="<%=rep.getImagen()%>">
-                                        <button name="action" value="Guardarfoto" > Agregar Imagen </button >
-                                    </form>
+                                    
 
                                 </div>
                             </div>

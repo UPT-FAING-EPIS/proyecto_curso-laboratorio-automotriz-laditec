@@ -44,7 +44,7 @@
                         <input type="hidden" name="accion" value="RegistrarUsuario" >
            
                         <input type="submit" name="RegistrarUsuarioDB" class="btn btn-primary width-100" value="Registrarme" /><%--Modificado por Eric--%>
-                        <a href="Login.jsp" type="submit" name="button1" class="">Volver</a> <%--Modificado por Helbert--%>
+                        <a href="index.jsp" type="submit" name="button1" class="">Volver</a> <%--Modificado por Helbert--%>
 
                     </form>
                 </div>

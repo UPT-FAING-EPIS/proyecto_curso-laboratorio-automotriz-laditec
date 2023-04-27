@@ -4,30 +4,33 @@
  */
 package ModeloDAO;
 
-import Modelo.*;
-import Config.*;
+
+import Config.conexion;
 import Interfaces.interfazLogin;
 import Modelo.Usuario;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class LoginDAO implements interfazLogin{
     conexion cn=new conexion();
     Connection con;
     PreparedStatement ps;
     ResultSet rs;
-    Statement st;
+    
+    private static Logger logger = Logger.getLogger("MyLog");
     
      @Override
     public Usuario loginUsuario(String user, String clave) {
         
         Usuario objuser=new Usuario();
-        String sql="select * from tbusuario where email='"+user+"' and clave='"+clave+"' ";
+        String sql="select * from tbusuario where email=? and clave=? ";
         
         try{
-            con=(Connection) cn.getConnection();
+            con= cn.getConnection();
             ps=con.prepareStatement(sql);
+            ps.setString(1,user );
+            ps.setString(2,clave );
             rs=ps.executeQuery();
             if (rs!=null){
             
@@ -47,7 +50,7 @@ public class LoginDAO implements interfazLogin{
             }
             
         }catch(SQLException e){
-            System.out.println("error"+e.toString());
+            logger.log(Level.WARNING,e.toString());
         }
         return null;
     }

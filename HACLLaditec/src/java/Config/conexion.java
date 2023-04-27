@@ -1,29 +1,26 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Config;
 
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-/**
- *
- * @author Todos
- */
+
 public class conexion {
     private static Connection cnx=null;
+    private static Logger logger = Logger.getLogger("MyLog");
     
     public conexion(){
          try{
                 Class.forName("com.mysql.jdbc.Driver");
                 cnx=DriverManager.getConnection("jdbc:mysql://localhost:3306/dbladitec","root","");
             }catch(ClassNotFoundException | SQLException ex){
-                System.out.println("Error conexion "+ex.getMessage());
+                logger.log(Level.WARNING,ex.toString());
             }
     }
     
     public Connection getConnection(){
-        return this.cnx;
+        return cnx;
     }
     
     public static void cerrar() throws SQLException{
