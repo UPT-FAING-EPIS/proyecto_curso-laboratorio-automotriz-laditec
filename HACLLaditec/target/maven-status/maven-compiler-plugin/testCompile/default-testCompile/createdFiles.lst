@@ -1,0 +1,7 @@
+ModeloDAO\UsuariosDAOTest.class
+ModeloDAO\RepuestoDAOTest.class
+Modelo\RepuestoTest.class
+ModeloDAO\LoginDAOTest.class
+Modelo\PedidoVentaTest.class
+Modelo\UsuarioTest.class
+ModeloDAO\PedidoVentaDAOTest.class
