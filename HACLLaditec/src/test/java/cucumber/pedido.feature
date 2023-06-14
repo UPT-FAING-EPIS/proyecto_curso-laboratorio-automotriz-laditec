@@ -17,7 +17,7 @@ Feature: Manejo de pedidos de venta
 
   Scenario: Editar pedido
     Given un usuario con ID de usuario 1
-    When se edita el pedido con ID de pedido 1, nueva fecha "2023-06-14" y nuevo estado "En progreso"
+    When se edita el pedido con ID de pedido 1, nueva fecha "2023-06-14" y nuevo estado "P"
     Then el pedido se edita correctamente
 
 

@@ -36,7 +36,7 @@ public class PedidoSteps {
     public void se_ha_agregado_un_pedido() {
         pedido = new PedidoVenta();
         pedido.setIdusuario(1);
-        pedido.setFecha("2023-06-14");
+        pedido.setFecha("2023-06-13");
         pedido.setEstado("A");
         pedidoVentaDAO.add(pedido);
     }
@@ -64,10 +64,10 @@ public class PedidoSteps {
     }
 
     @When("se edita el pedido con ID de pedido {int}, nueva fecha {string} y nuevo estado {string}")
-    public void se_edita_el_pedido_con_ID_de_pedido_nueva_fecha_y_nuevo_estado(Integer idpedido, String fecha, String estado) {
-        pedido.setIdpedido(idpedido);
-        pedido.setFecha(fecha);
-        pedido.setEstado(estado);
+    public void se_edita_el_pedido_con_ID_de_pedido_nueva_fecha_y_nuevo_estado(int idpedido, String fecha, String estado) {
+        pedido.setIdpedido(63);
+        pedido.setFecha("2023-06-15");
+        pedido.setEstado("P");
         resultadoOperacion = pedidoVentaDAO.edit(pedido);
     }
 
