@@ -2,7 +2,7 @@ Feature: Manejo de pedidos de venta
 
   Scenario: Agregar pedido
     Given un usuario con ID de usuario 1
-    When se agrega un pedido con fecha "2023-06-13" y estado "Pendiente"
+    When se agrega un pedido con idusuario 1, fecha "2023-06-13" y estado "A"
     Then el pedido se agrega correctamente
 
   Scenario: Listar pedidos
