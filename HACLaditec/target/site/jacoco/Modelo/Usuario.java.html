@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Usuario.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">HACLLaditec</a> &gt; <a href="index.source.html" class="el_package">Modelo</a> &gt; <span class="el_source">Usuario.java</span></div><h1>Usuario.java</h1><pre class="source lang-java linenums">/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Modelo;
+
+
+public class Usuario {
+
+<span class="fc" id="L10">    public Usuario() {</span>
+<span class="fc" id="L11">    }</span>
+
+<span class="nc" id="L13">    public Usuario(int idusuario, String nomusuario, String email, String clave, int fkidrol, String estado,int intentos) {</span>
+<span class="nc" id="L14">        this.idusuario = idusuario;</span>
+<span class="nc" id="L15">        this.nomusuario = nomusuario;</span>
+<span class="nc" id="L16">        this.email = email;</span>
+<span class="nc" id="L17">        this.clave = clave;</span>
+<span class="nc" id="L18">        this.fkidrol = fkidrol;</span>
+<span class="nc" id="L19">        this.estado = estado;</span>
+<span class="nc" id="L20">        this.intentos=intentos;</span>
+<span class="nc" id="L21">    }</span>
+
+    public int getIdusuario() {
+<span class="fc" id="L24">        return idusuario;</span>
+    }
+
+    public void setIdusuario(int idusuario) {
+<span class="fc" id="L28">        this.idusuario = idusuario;</span>
+<span class="fc" id="L29">    }</span>
+
+    public String getNomusuario() {
+<span class="fc" id="L32">        return nomusuario;</span>
+    }
+
+    public void setNomusuario(String nomusuario) {
+<span class="fc" id="L36">        this.nomusuario = nomusuario;</span>
+<span class="fc" id="L37">    }</span>
+
+    public String getEmail() {
+<span class="fc" id="L40">        return email;</span>
+    }
+
+    public void setEmail(String email) {
+<span class="fc" id="L44">        this.email = email;</span>
+<span class="fc" id="L45">    }</span>
+
+    public String getClave() {
+<span class="fc" id="L48">        return clave;</span>
+    }
+
+    public void setClave(String clave) {
+<span class="fc" id="L52">        this.clave = clave;</span>
+<span class="fc" id="L53">    }</span>
+
+    public int getFkidrol() {
+<span class="fc" id="L56">        return fkidrol;</span>
+    }
+
+    public void setFkidrol(int fkidrol) {
+<span class="fc" id="L60">        this.fkidrol = fkidrol;</span>
+<span class="fc" id="L61">    }</span>
+
+    public String getEstado() {
+<span class="fc" id="L64">        return estado;</span>
+    }
+
+    public void setEstado(String estado) {
+<span class="fc" id="L68">        this.estado = estado;</span>
+<span class="fc" id="L69">    }</span>
+
+    public int getIntentos() {
+<span class="fc" id="L72">        return intentos;</span>
+    }
+
+    public void setIntentos(int intentos) {
+<span class="fc" id="L76">        this.intentos = intentos;</span>
+<span class="fc" id="L77">    }</span>
+
+    private int idusuario;
+    private String nomusuario;
+    private String email;
+    private String clave;
+    private int  fkidrol;
+    private String estado;
+    private int intentos;
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

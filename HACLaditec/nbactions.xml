@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>CUSTOM-Generar Reporte Allure</actionName>
+            <displayName>Generar Reporte Allure</displayName>
+            <goals>
+                <goal>allure</goal>
+                <goal>generate</goal>
+                <goal>allure-results</goal>
+                <goal>-c</goal>
+                <goal>-o</goal>
+                <goal>allure-report</goal>
+            </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM-allure:report</actionName>
+            <displayName>allure:report</displayName>
+            <goals>
+                <goal>allure:report</goal>
+            </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM-allure:serve</actionName>
+            <displayName>allure:serve</displayName>
+            <goals>
+                <goal>allure:serve</goal>
+            </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM-jacoco</actionName>
+            <displayName>jacoco</displayName>
+            <goals>
+                <goal>jacoco:report</goal>
+            </goals>
+        </action>
+    </actions>

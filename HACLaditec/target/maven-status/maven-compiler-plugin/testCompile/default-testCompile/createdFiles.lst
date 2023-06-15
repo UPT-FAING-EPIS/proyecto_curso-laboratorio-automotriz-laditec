@@ -1,0 +1,16 @@
+cucumber\RunPedido.class
+cucumber\RunUsuario.class
+ModeloDAO\RepuestoDAOTest.class
+cucumber\RunLogin.class
+Modelo\RepuestoTest.class
+Pedido\steps\PedidoSteps.class
+Modelo\UsuarioTest.class
+cucumber\RunProducto.class
+ModeloDAO\UsuariosDAOTest.class
+Controlador\ControladorTest.class
+ModeloDAO\LoginDAOTest.class
+Modelo\PedidoVentaTest.class
+usuario\steps\UsuarioSteps.class
+producto\steps\ProductoSteps.class
+ModeloDAO\PedidoVentaDAOTest.class
+Login\steps\LoginSteps.class
