@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="3" failures="0" name="cucumber.RunUsuario" time="0.036" errors="0" skipped="0">
+<testsuite tests="3" failures="0" name="cucumber.RunUsuario" time="0.055" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="17.0.6+9-LTS-190"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-17\bin"/>
-    <property name="maven.multiModuleProjectDirectory" value="C:\Users\hp\Desktop\INTENTOS_ALLURE\TESTEOOOO\proyecto_curso-laboratorio-automotriz-laditec-mave-proyectofinal\HACLLaditec"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\hp\Documents\laditec\HACLLaditec"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="java.vendor.url" value="https://java.oracle.com/"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -16,7 +16,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="test" value="cucumber.RunLogin,cucumber.RunPedido,cucumber.RunProducto,cucumber.RunUsuario"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="C:\Users\hp\Desktop\INTENTOS_ALLURE\TESTEOOOO\proyecto_curso-laboratorio-automotriz-laditec-mave-proyectofinal\HACLLaditec"/>
+    <property name="user.dir" value="C:\Users\hp\Documents\laditec\HACLLaditec"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="java.runtime.version" value="17.0.6+9-LTS-190"/>
     <property name="os.arch" value="amd64"/>
@@ -61,7 +61,7 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="Manejo de usuarios" name="Agregar usuario" time="0.016"/>
-  <testcase classname="Manejo de usuarios" name="Listar usuario" time="0.012"/>
-  <testcase classname="Manejo de usuarios" name="Editar usuario" time="0.008"/>
+  <testcase classname="Manejo de usuarios" name="Agregar usuario" time="0.029"/>
+  <testcase classname="Manejo de usuarios" name="Listar usuario" time="0.016"/>
+  <testcase classname="Manejo de usuarios" name="Editar usuario" time="0.01"/>
 </testsuite>

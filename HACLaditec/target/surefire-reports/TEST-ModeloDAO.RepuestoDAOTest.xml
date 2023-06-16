@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="4" failures="0" name="ModeloDAO.RepuestoDAOTest" time="0.013" errors="0" skipped="0">
+<testsuite tests="4" failures="0" name="ModeloDAO.RepuestoDAOTest" time="0.017" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="17.0.6+9-LTS-190"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-17\bin"/>
-    <property name="maven.multiModuleProjectDirectory" value="C:\Users\hp\Desktop\INTENTOS_ALLURE\TESTEOOOO\proyecto_curso-laboratorio-automotriz-laditec-mave-proyectofinal\HACLLaditec"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\hp\Documents\laditec\HACLLaditec"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="java.vendor.url" value="https://java.oracle.com/"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -15,7 +15,7 @@
     <property name="user.country" value="PE"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="C:\Users\hp\Desktop\INTENTOS_ALLURE\TESTEOOOO\proyecto_curso-laboratorio-automotriz-laditec-mave-proyectofinal\HACLLaditec"/>
+    <property name="user.dir" value="C:\Users\hp\Documents\laditec\HACLLaditec"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="java.runtime.version" value="17.0.6+9-LTS-190"/>
     <property name="os.arch" value="amd64"/>
@@ -62,6 +62,6 @@
   </properties>
   <testcase classname="ModeloDAO.RepuestoDAOTest" name="testAdd_ValidRepuesto_ReturnsTrue" time="0.003"/>
   <testcase classname="ModeloDAO.RepuestoDAOTest" name="testList_ValidId_ReturnsRepuestoObject" time="0.003"/>
-  <testcase classname="ModeloDAO.RepuestoDAOTest" name="testListar_ReturnsListOfRepuestos" time="0.003"/>
+  <testcase classname="ModeloDAO.RepuestoDAOTest" name="testListar_ReturnsListOfRepuestos" time="0.007"/>
   <testcase classname="ModeloDAO.RepuestoDAOTest" name="testEdit_ValidRepuesto_ReturnsTrue" time="0.004"/>
 </testsuite>

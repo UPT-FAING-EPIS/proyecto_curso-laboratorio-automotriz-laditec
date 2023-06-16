@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="4" failures="0" name="ModeloDAO.LoginDAOTest" time="0" errors="0" skipped="0">
+<testsuite tests="4" failures="0" name="ModeloDAO.LoginDAOTest" time="0.028" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="17.0.6+9-LTS-190"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-17\bin"/>
-    <property name="maven.multiModuleProjectDirectory" value="C:\Users\hp\Desktop\INTENTOS_ALLURE\TESTEOOOO\proyecto_curso-laboratorio-automotriz-laditec-mave-proyectofinal\HACLLaditec"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\hp\Documents\laditec\HACLLaditec"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="java.vendor.url" value="https://java.oracle.com/"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -15,7 +15,7 @@
     <property name="user.country" value="PE"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="C:\Users\hp\Desktop\INTENTOS_ALLURE\TESTEOOOO\proyecto_curso-laboratorio-automotriz-laditec-mave-proyectofinal\HACLLaditec"/>
+    <property name="user.dir" value="C:\Users\hp\Documents\laditec\HACLLaditec"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="java.runtime.version" value="17.0.6+9-LTS-190"/>
     <property name="os.arch" value="amd64"/>
@@ -61,7 +61,7 @@
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
   <testcase classname="ModeloDAO.LoginDAOTest" name="testLoginUsuario_EmptyUserAndEmptyClave_ReturnsNull" time="0"/>
-  <testcase classname="ModeloDAO.LoginDAOTest" name="testLoginUsuario_ValidCredentials_ReturnsUsuarioObject" time="0"/>
-  <testcase classname="ModeloDAO.LoginDAOTest" name="testLoginUsuario_InvalidCredentials_ReturnsNull" time="0"/>
-  <testcase classname="ModeloDAO.LoginDAOTest" name="testLoginUsuario_NullUserAndNullClave_ReturnsNull" time="0"/>
+  <testcase classname="ModeloDAO.LoginDAOTest" name="testLoginUsuario_ValidCredentials_ReturnsUsuarioObject" time="0.017"/>
+  <testcase classname="ModeloDAO.LoginDAOTest" name="testLoginUsuario_InvalidCredentials_ReturnsNull" time="0.005"/>
+  <testcase classname="ModeloDAO.LoginDAOTest" name="testLoginUsuario_NullUserAndNullClave_ReturnsNull" time="0.006"/>
 </testsuite>

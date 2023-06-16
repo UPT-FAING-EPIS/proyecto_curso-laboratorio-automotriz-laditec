@@ -3,13 +3,12 @@ package Modelo;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-
 public class PedidoVentaTest {
 
     public PedidoVentaTest() {
     }
 
-    @Test
+        @Test
     public void testGetSetIdPedido() {
         PedidoVenta pedido = new PedidoVenta();
         pedido.setIdpedido(1);

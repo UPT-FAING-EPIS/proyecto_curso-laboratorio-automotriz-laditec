@@ -3,7 +3,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2023-06-15T23:43:15.309Z",
+        "start_timestamp": "2023-06-16T00:27:13.666Z",
         "line": 3,
         "name": "Agregar usuario",
         "description": "",
@@ -13,6 +13,7 @@
         "steps": [
           {
             "result": {
+              "duration": 11895800,
               "status": "passed"
             },
             "line": 4,
@@ -30,6 +31,7 @@
           },
           {
             "result": {
+              "duration": 6096100,
               "status": "passed"
             },
             "line": 5,
@@ -47,6 +49,7 @@
           },
           {
             "result": {
+              "duration": 391100,
               "status": "passed"
             },
             "line": 6,
@@ -59,7 +62,7 @@
         ]
       },
       {
-        "start_timestamp": "2023-06-15T23:43:15.325Z",
+        "start_timestamp": "2023-06-16T00:27:13.693Z",
         "line": 8,
         "name": "Listar usuario",
         "description": "",
@@ -69,7 +72,7 @@
         "steps": [
           {
             "result": {
-              "duration": 7339000,
+              "duration": 11460000,
               "status": "passed"
             },
             "line": 9,
@@ -81,7 +84,7 @@
           },
           {
             "result": {
-              "duration": 990000,
+              "duration": 1001200,
               "status": "passed"
             },
             "line": 10,
@@ -105,7 +108,7 @@
         ]
       },
       {
-        "start_timestamp": "2023-06-15T23:43:15.338Z",
+        "start_timestamp": "2023-06-16T00:27:13.710Z",
         "line": 14,
         "name": "Editar usuario",
         "description": "",
@@ -115,7 +118,7 @@
         "steps": [
           {
             "result": {
-              "duration": 3000000,
+              "duration": 6001000,
               "status": "passed"
             },
             "line": 15,
@@ -133,6 +136,7 @@
           },
           {
             "result": {
+              "duration": 999200,
               "status": "passed"
             },
             "line": 16,

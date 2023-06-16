@@ -54,7 +54,7 @@ public class UsuariosDAOTest {
  
     @Test
     public void testDesactivarCuenta() {
-        String email = "miguel1@gmail.com";
+        String email = "nuevointento@gmail.com";
         UsuariosDAO instance = new UsuariosDAO();
         boolean result = instance.DesactivarCuenta(email);
         assertTrue(result);
@@ -63,7 +63,7 @@ public class UsuariosDAOTest {
 
     @Test
     public void testUpdatebloqueos() {
-        String email = "pedro1@gmail.com";
+        String email = "nuevointento@gmail.com";
         UsuariosDAO instance = new UsuariosDAO();
         boolean result = instance.Updatebloqueos(email);
         assertTrue(result);

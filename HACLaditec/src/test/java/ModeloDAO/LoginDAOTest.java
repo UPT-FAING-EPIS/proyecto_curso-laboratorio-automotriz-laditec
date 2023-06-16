@@ -18,11 +18,12 @@ public class LoginDAOTest {
     public void testLoginUsuario_ValidCredentials_ReturnsUsuarioObject() {
         // Prueba de credenciales válidas
         LoginDAO loginDAO = new LoginDAO();
-        String user = "jorge123@gmail.com";
-        String clave = "jorge123";
+        String user = "nuevointento@gmail.com";
+        String clave = "nuevointento";
 
         Usuario result = loginDAO.loginUsuario(user, clave);
 
+        assertNotNull(result);
         assertEquals(user, result.getEmail());
         assertEquals(clave, result.getClave());
     }
