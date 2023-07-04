@@ -3,7 +3,7 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2023-06-16T00:27:13.666Z",
+        "start_timestamp": "2023-07-04T20:04:32.873Z",
         "line": 3,
         "name": "Agregar usuario",
         "description": "",
@@ -13,7 +13,7 @@
         "steps": [
           {
             "result": {
-              "duration": 11895800,
+              "duration": 7994000,
               "status": "passed"
             },
             "line": 4,
@@ -31,7 +31,7 @@
           },
           {
             "result": {
-              "duration": 6096100,
+              "duration": 100335100,
               "status": "passed"
             },
             "line": 5,
@@ -49,7 +49,7 @@
           },
           {
             "result": {
-              "duration": 391100,
+              "duration": 1000200,
               "status": "passed"
             },
             "line": 6,
@@ -62,7 +62,7 @@
         ]
       },
       {
-        "start_timestamp": "2023-06-16T00:27:13.693Z",
+        "start_timestamp": "2023-07-04T20:04:33.006Z",
         "line": 8,
         "name": "Listar usuario",
         "description": "",
@@ -72,7 +72,7 @@
         "steps": [
           {
             "result": {
-              "duration": 11460000,
+              "duration": 40417700,
               "status": "passed"
             },
             "line": 9,
@@ -84,7 +84,7 @@
           },
           {
             "result": {
-              "duration": 1001200,
+              "duration": 1963000,
               "status": "passed"
             },
             "line": 10,
@@ -108,7 +108,7 @@
         ]
       },
       {
-        "start_timestamp": "2023-06-16T00:27:13.710Z",
+        "start_timestamp": "2023-07-04T20:04:33.057Z",
         "line": 14,
         "name": "Editar usuario",
         "description": "",
@@ -118,7 +118,7 @@
         "steps": [
           {
             "result": {
-              "duration": 6001000,
+              "duration": 5998900,
               "status": "passed"
             },
             "line": 15,
@@ -136,7 +136,7 @@
           },
           {
             "result": {
-              "duration": 999200,
+              "duration": 1999300,
               "status": "passed"
             },
             "line": 16,
@@ -162,6 +162,7 @@
           },
           {
             "result": {
+              "duration": 1004900,
               "status": "passed"
             },
             "line": 17,
