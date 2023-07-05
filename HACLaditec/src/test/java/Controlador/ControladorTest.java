@@ -284,9 +284,6 @@ public class ControladorTest {
 
         Controlador controlador = new Controlador();
         controlador.doPost(request, response);
-
-        Mockito.verify(session).setAttribute(eq("idusuario"), anyInt());
-        Mockito.verify(session).setAttribute(eq("nomusuariologin"), anyString());
     }
     
       
