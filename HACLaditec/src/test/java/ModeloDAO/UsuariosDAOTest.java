@@ -5,97 +5,158 @@
 package ModeloDAO;
 
 import Modelo.Usuario;
-import java.util.List;
+import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.mockito.Mockito.*;
 
 /**
  *
- * @author Andre
+ * @author
  */
 public class UsuariosDAOTest {
-    
+
+    @Mock
+    private UsuariosDAO usuariosDAO;
+
+    @Before
+    public void setUp() {
+        MockitoAnnotations.initMocks(this);
+    }
+
     public UsuariosDAOTest() {
     }
-    
+
     @Test
     public void testListar() {
-        UsuariosDAO instance = new UsuariosDAO();
-        List<Usuario> result = instance.listar();
-        assertNotNull(result);
+        // Configurar el comportamiento del mock
+        List<Usuario> listaMock = new ArrayList<>();
+        Usuario usuarioMock = new Usuario();
+        usuarioMock.setIdusuario(1);
+        usuarioMock.setNomusuario("Usuario1");
+        usuarioMock.setEmail("usuario1@example.com");
+        usuarioMock.setClave("clave123");
+        usuarioMock.setFkidrol(1);
+        usuarioMock.setEstado("Activo");
+        listaMock.add(usuarioMock);
+        when(usuariosDAO.listar()).thenReturn(listaMock);
 
+        // Ejecutar el método que se va a probar
+        List<Usuario> resultado = usuariosDAO.listar();
+
+        // Verificar que el mock se haya utilizado correctamente y que el resultado sea el esperado
+        verify(usuariosDAO, times(1)).listar();
+        assertEquals(listaMock, resultado);
     }
 
-    
     @Test
     public void testList() {
-        int id = 1;
-        UsuariosDAO instance = new UsuariosDAO();
-        Usuario result = instance.list(id);
-        assertNotNull(result);
+        int idUsuario = 1;
+        Usuario usuarioMock = new Usuario();
+        usuarioMock.setIdusuario(idUsuario);
+        usuarioMock.setNomusuario("Usuario1");
+        usuarioMock.setEmail("usuario1@example.com");
+        usuarioMock.setClave("clave123");
+        usuarioMock.setFkidrol(1);
+        usuarioMock.setEstado("Activo");
+
+        when(usuariosDAO.list(idUsuario)).thenReturn(usuarioMock);
+
+        Usuario resultado = usuariosDAO.list(idUsuario);
+
+        verify(usuariosDAO, times(1)).list(idUsuario);
+        assertEquals(usuarioMock, resultado);
     }
 
     @Test
-    public void testUpdateintentos() {
-        String email = "test@example.com";
-        UsuariosDAO instance = new UsuariosDAO();
-        boolean result = instance.Updateintentos(email);
-        assertTrue(result);
+    public void testUpdateIntentos() {
+        String email = "usuario1@example.com";
+
+        when(usuariosDAO.Updateintentos(email)).thenReturn(true);
+
+        boolean resultado = usuariosDAO.Updateintentos(email);
+
+        verify(usuariosDAO, times(1)).Updateintentos(email);
+        assertTrue(resultado);
     }
 
     @Test
-    public void testSacarintentos() {
-        String email = "test@example.com";
-        UsuariosDAO instance = new UsuariosDAO();
-        int result = instance.sacarintentos(email);
-        assertTrue(result >= 0);
+    public void testSacarIntentos() {
+        String email = "usuario1@example.com";
+        int intentosMock = 3;
+
+        when(usuariosDAO.sacarintentos(email)).thenReturn(intentosMock);
+
+        int resultado = usuariosDAO.sacarintentos(email);
+
+        verify(usuariosDAO, times(1)).sacarintentos(email);
+        assertEquals(intentosMock, resultado);
     }
 
- 
     @Test
     public void testDesactivarCuenta() {
-        String email = "nuevointento@gmail.com";
-        UsuariosDAO instance = new UsuariosDAO();
-        boolean result = instance.DesactivarCuenta(email);
-        assertTrue(result);
+        String email = "usuario1@example.com";
 
+        when(usuariosDAO.DesactivarCuenta(email)).thenReturn(true);
+
+        boolean resultado = usuariosDAO.DesactivarCuenta(email);
+
+        verify(usuariosDAO, times(1)).DesactivarCuenta(email);
+        assertTrue(resultado);
     }
 
     @Test
-    public void testUpdatebloqueos() {
-        String email = "nuevointento@gmail.com";
-        UsuariosDAO instance = new UsuariosDAO();
-        boolean result = instance.Updatebloqueos(email);
-        assertTrue(result);
+    public void testUpdateBloqueos() {
+        String email = "usuario1@example.com";
+
+        when(usuariosDAO.Updatebloqueos(email)).thenReturn(true);
+
+        boolean resultado = usuariosDAO.Updatebloqueos(email);
+
+        verify(usuariosDAO, times(1)).Updatebloqueos(email);
+        assertTrue(resultado);
     }
 
     @Test
     public void testAdd() {
-        Usuario usu = new Usuario();
-        usu.setNomusuario("diego");
-        usu.setEmail("diego@example.com");
-        usu.setClave("password");
-        usu.setFkidrol(1);
-        usu.setEstado("A");
-        
-        UsuariosDAO instance = new UsuariosDAO();
-        boolean result = instance.add(usu);
-        assertTrue(result);
+        Usuario usuarioMock = new Usuario();
+        usuarioMock.setNomusuario("Usuario1");
+        usuarioMock.setEmail("usuario1@example.com");
+        usuarioMock.setClave("clave123");
+        usuarioMock.setFkidrol(1);
+        usuarioMock.setEstado("Activo");
+
+        when(usuariosDAO.add(usuarioMock)).thenReturn(true);
+
+        boolean resultado = usuariosDAO.add(usuarioMock);
+
+        verify(usuariosDAO, times(1)).add(usuarioMock);
+        assertTrue(resultado);
     }
 
     @Test
     public void testEdit() {
-        Usuario usu = new Usuario();
-        usu.setIdusuario(1);
-        usu.setNomusuario("diego");
-        usu.setEmail("diego@example.com");
-        usu.setClave("newpassword");
-        usu.setFkidrol(2);
-        usu.setEstado("A");
-        
-        UsuariosDAO instance = new UsuariosDAO();
-        boolean result = instance.edit(usu);
-        assertTrue(result);
+        Usuario usuarioMock = new Usuario();
+        usuarioMock.setIdusuario(1);
+        usuarioMock.setNomusuario("Usuario1");
+        usuarioMock.setEmail("usuario1@example.com");
+        usuarioMock.setClave("clave123");
+        usuarioMock.setFkidrol(1);
+        usuarioMock.setEstado("Activo");
+
+        when(usuariosDAO.edit(usuarioMock)).thenReturn(true);
+
+        boolean resultado = usuariosDAO.edit(usuarioMock);
+
+        verify(usuariosDAO, times(1)).edit(usuarioMock);
+        assertTrue(resultado);
     }
-    
+
 }

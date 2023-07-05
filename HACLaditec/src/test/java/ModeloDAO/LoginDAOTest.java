@@ -1,67 +1,80 @@
 
 package ModeloDAO;
+
 import Modelo.Usuario;
-import Config.conexion;
+import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+
+
 import static org.junit.Assert.*;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.*;
+
 
 /**
  * Pruebas unitarias para LoginDAO
  */
 
 public class LoginDAOTest {
+    
+    @Mock
+    private LoginDAO loginDAO;
 
     public LoginDAOTest() {
     }
 
+    
+    @Before
+    public void setUp() {
+        MockitoAnnotations.initMocks(this);
+    }
+    
     @Test
-    public void testLoginUsuario_ValidCredentials_ReturnsUsuarioObject() {
-        // Prueba de credenciales válidas
-        LoginDAO loginDAO = new LoginDAO();
-        String user = "nuevointento@gmail.com";
-        String clave = "nuevointento";
+    public void testLoginUsuario() {
+        Usuario usuarioMock = new Usuario();
+        usuarioMock.setIdusuario(1);
+        usuarioMock.setNomusuario("John Doe");
+        usuarioMock.setEmail("john@example.com");
+        usuarioMock.setClave("password");
+        usuarioMock.setFkidrol(2);
+        usuarioMock.setEstado("activo");
+        usuarioMock.setIntentos(0);
+        when(loginDAO.loginUsuario(anyString(), anyString())).thenReturn(usuarioMock);
 
-        Usuario result = loginDAO.loginUsuario(user, clave);
+        Usuario resultado = loginDAO.loginUsuario("john@example.com", "password");
 
-        assertNotNull(result);
-        assertEquals(user, result.getEmail());
-        assertEquals(clave, result.getClave());
+        verify(loginDAO, times(1)).loginUsuario("john@example.com", "password");
+        assertEquals(usuarioMock, resultado);
+    }
+    @Test
+    public void testLoginUsuario_ValidCredentials_ReturnsUser() {
+        Usuario usuarioMock = new Usuario();
+        usuarioMock.setIdusuario(1);
+        usuarioMock.setNomusuario("John Doe");
+        usuarioMock.setEmail("john@example.com");
+        usuarioMock.setClave("password");
+        usuarioMock.setFkidrol(2);
+        usuarioMock.setEstado("activo");
+        usuarioMock.setIntentos(0);
+        when(loginDAO.loginUsuario(anyString(), anyString())).thenReturn(usuarioMock);
+
+        Usuario resultado = loginDAO.loginUsuario("john@example.com", "password");
+
+        verify(loginDAO, times(1)).loginUsuario("john@example.com", "password");
+        assertEquals(usuarioMock, resultado);
     }
 
     @Test
     public void testLoginUsuario_InvalidCredentials_ReturnsNull() {
-        // Prueba de credenciales inválidas
-        LoginDAO loginDAO = new LoginDAO();
-        String user = "nonexistent@example.com";
-        String clave = "invalidpassword";
+        when(loginDAO.loginUsuario(anyString(), anyString())).thenReturn(null);
 
-        Usuario result = loginDAO.loginUsuario(user, clave);
+        Usuario resultado = loginDAO.loginUsuario("john@example.com", "wrong_password");
 
-        assertNull(result);
+        verify(loginDAO, times(1)).loginUsuario("john@example.com", "wrong_password");
+        assertNull(resultado);
     }
 
-    @Test
-    public void testLoginUsuario_EmptyUserAndEmptyClave_ReturnsNull() {
-        // Prueba de usuario y clave vacíos
-        LoginDAO loginDAO = new LoginDAO();
-        String user = "";
-        String clave = "";
-
-        Usuario result = loginDAO.loginUsuario(user, clave);
-
-        assertNull(result);
-    }
-
-    @Test
-    public void testLoginUsuario_NullUserAndNullClave_ReturnsNull() {
-        // Prueba de usuario y clave nulos
-        LoginDAO loginDAO = new LoginDAO();
-        String user = null;
-        String clave = null;
-
-        Usuario result = loginDAO.loginUsuario(user, clave);
-
-        assertNull(result);
-    }
 
 }

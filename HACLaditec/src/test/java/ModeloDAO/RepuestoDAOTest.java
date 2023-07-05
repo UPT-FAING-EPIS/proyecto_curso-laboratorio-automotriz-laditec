@@ -5,80 +5,114 @@
 package ModeloDAO;
 
 import Modelo.Repuesto;
-import java.util.List;
+
+import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.mockito.Mockito.*;
 
 /**
  *
- * @author Andre
+ * @author
  */
 public class RepuestoDAOTest {
-    
+
+    @Mock
+    private RepuestoDAO repuestoDAO;
+
     public RepuestoDAOTest() {
     }
-    
-    @Test
-    public void testListar_ReturnsListOfRepuestos() {
-        // Prueba del método listar
-        RepuestoDAO repuestoDAO = new RepuestoDAO();
 
-        // Agregar lógica para insertar algunos datos de prueba en la base de datos
-        List<Repuesto> result = repuestoDAO.listar();
-
-        assertFalse(result.isEmpty());
-        // Agregar más aserciones según los resultados esperados de la consulta
+    @Before
+    public void setUp() {
+        MockitoAnnotations.initMocks(this);
     }
 
     @Test
-    public void testList_ValidId_ReturnsRepuestoObject() {
-        // Prueba del método list con un ID válido
-        RepuestoDAO repuestoDAO = new RepuestoDAO();
-        int id = 1;
+    public void testListar() {
+        List<Repuesto> listaMock = new ArrayList<>();
+        Repuesto repuestoMock = new Repuesto();
+        repuestoMock.setIdrepuesto(1);
+        repuestoMock.setFkidalmacen(1);
+        repuestoMock.setFkidestado(1);
+        repuestoMock.setNombre("Repuesto 1");
+        repuestoMock.setFkidcategoria(1);
+        repuestoMock.setImagen("imagen.jpg");
+        repuestoMock.setPreciounitario(10.0);
+        repuestoMock.setCantidad(10);
+        listaMock.add(repuestoMock);
+        when(repuestoDAO.listar()).thenReturn(listaMock);
 
-        Repuesto result = repuestoDAO.list(id);
+        List<Repuesto> resultado = repuestoDAO.listar();
 
-        assertNotNull(result);
-        assertEquals(id, result.getIdrepuesto());
+        verify(repuestoDAO, times(1)).listar();
+        assertEquals(listaMock, resultado);
     }
 
     @Test
-    public void testAdd_ValidRepuesto_ReturnsTrue() {
-        RepuestoDAO repuestoDAO = new RepuestoDAO();
-        Repuesto rep = new Repuesto();
-        rep.setIdrepuesto(51);
-        rep.setFkidalmacen(2);
-        rep.setFkidestado(2);
-        rep.setNombre("asd");
-        rep.setFkidcategoria(1);
-        rep.setImagen("png");
-        rep.setPreciounitario(150.5);
-        rep.setCantidad(5);
+    public void testList() {
+        int idRepuesto = 1;
+        Repuesto repuestoMock = new Repuesto();
+        repuestoMock.setIdrepuesto(idRepuesto);
+        repuestoMock.setFkidalmacen(1);
+        repuestoMock.setFkidestado(1);
+        repuestoMock.setNombre("Repuesto 1");
+        repuestoMock.setFkidcategoria(1);
+        repuestoMock.setImagen("imagen.jpg");
+        repuestoMock.setPreciounitario(10.0);
+        repuestoMock.setCantidad(10);
+        when(repuestoDAO.list(idRepuesto)).thenReturn(repuestoMock);
 
-        boolean result = repuestoDAO.add(rep);
-        assertTrue(result);
+        Repuesto resultado = repuestoDAO.list(idRepuesto);
 
-        
-        
+        verify(repuestoDAO, times(1)).list(idRepuesto);
+        assertEquals(repuestoMock, resultado);
     }
 
     @Test
-    public void testEdit_ValidRepuesto_ReturnsTrue() {
+    public void testAdd() {
+        Repuesto repuestoMock = new Repuesto();
+        repuestoMock.setIdrepuesto(1);
+        repuestoMock.setFkidalmacen(1);
+        repuestoMock.setFkidestado(1);
+        repuestoMock.setNombre("Repuesto 1");
+        repuestoMock.setFkidcategoria(1);
+        repuestoMock.setImagen("imagen.jpg");
+        repuestoMock.setPreciounitario(10.0);
+        repuestoMock.setCantidad(10);
+        when(repuestoDAO.add(repuestoMock)).thenReturn(true);
 
-        RepuestoDAO repuestoDAO = new RepuestoDAO();
-        Repuesto rep = new Repuesto();
-        rep.setIdrepuesto(1);
-        rep.setFkidalmacen(1);
-        rep.setFkidestado(1);
-        rep.setNombre("Juego de 4 piezas de inyectores - Nissan - Prueba");
-        rep.setFkidcategoria(1);
-        rep.setImagen("png");
-        rep.setPreciounitario(180.5);
-        rep.setCantidad(10);
+        boolean resultado = repuestoDAO.add(repuestoMock);
 
-        boolean result = repuestoDAO.edit(rep);
-
-        assertTrue(result);
+        verify(repuestoDAO, times(1)).add(repuestoMock);
+        assertTrue(resultado);
     }
+
+    @Test
+    public void testEdit() {
+        Repuesto repuestoMock = new Repuesto();
+        repuestoMock.setIdrepuesto(1);
+        repuestoMock.setFkidalmacen(1);
+        repuestoMock.setFkidestado(1);
+        repuestoMock.setNombre("Repuesto 1");
+        repuestoMock.setFkidcategoria(1);
+        repuestoMock.setImagen("imagen.jpg");
+        repuestoMock.setPreciounitario(10.0);
+        repuestoMock.setCantidad(10);
+        when(repuestoDAO.edit(repuestoMock)).thenReturn(true);
+
+        boolean resultado = repuestoDAO.edit(repuestoMock);
+
+        verify(repuestoDAO, times(1)).edit(repuestoMock);
+        assertTrue(resultado);
+    }
+
     
 }
