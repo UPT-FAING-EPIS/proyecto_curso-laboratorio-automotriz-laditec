@@ -19,8 +19,8 @@ jobs:
           distribution: 'temurin'
       - name: Install Allure Command Line
         run: |
-          wget https://github.com/allure-framework/allure2/releases/download/2.10.0/allure-2.10.0.zip
-          unzip allure-2.10.0.zip -d allure
+          wget https://github.com/allure-framework/allure-cli/releases/download/2.13.8/allure-2.13.8.zip
+          unzip allure-2.13.8.zip -d allure
           sudo mv allure /usr/local
           sudo ln -s /usr/local/allure/bin/allure /usr/bin/allure
       - name: Build and Run Tests
@@ -28,6 +28,7 @@ jobs:
       - name: Generate Allure Report
         run: allure generate --clean && allure open
         working-directory: HACLaditec/target/surefire-reports
+
 
 
 
