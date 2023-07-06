@@ -20,14 +20,16 @@ jobs:
       - name: Install Allure Command Line
         run: |
           wget https://github.com/allure-framework/allure2/releases/download/2.13.8/allure-2.13.8.zip
-          unzip allure-2.13.8.zip -d allure
-          sudo mv allure /usr/local
-          sudo ln -s /usr/local/allure/bin/allure /usr/bin/allure
+          unzip allure-2.13.8.zip
+          export PATH="$(pwd)/allure-2.13.8/bin:$PATH"
       - name: Build and Run Tests
         run: mvn -f HACLaditec/pom.xml test
       - name: Generate Allure Report
-        run: allure generate --clean && allure open
+        run: |
+          allure generate --clean
+          allure open
         working-directory: HACLaditec/target/surefire-reports
+
 
 
 
