@@ -1,0 +1,20 @@
+.section-title{
+    padding: 20px;
+  }
+  
+.card-body{
+  color:#8a8d93;
+}
+.card-body:hover{
+  color:#566d99;
+  transition: 0.5s;
+}
+
+.cardsss{
+  text-align: center;
+  padding: 20px;
+}
+i.iconocrud{
+font-size: 35px;
+}
+  

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PedidoVentaDAO.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">HACLLaditec</a> &gt; <a href="index.source.html" class="el_package">ModeloDAO</a> &gt; <span class="el_source">PedidoVentaDAO.java</span></div><h1>PedidoVentaDAO.java</h1><pre class="source lang-java linenums">package ModeloDAO;
+
+import Config.conexion;
+import Interfaces.crudPedidoVenta;
+import Modelo.PedidoVenta;
+import java.util.*;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+<span class="fc" id="L12">public class PedidoVentaDAO implements crudPedidoVenta {</span>
+
+<span class="fc" id="L14">    conexion cn = new conexion();</span>
+    Connection con;
+    PreparedStatement ps;
+    ResultSet rs;
+    Statement st;
+<span class="fc" id="L19">    private static Logger logger = Logger.getLogger(&quot;MyLog&quot;);</span>
+
+    @Override
+    public List listar() {
+<span class="nc" id="L23">        ArrayList&lt;PedidoVenta&gt; list = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L24">        String sql = &quot;select * from tbpedidoventa&quot;;</span>
+        try {
+<span class="nc" id="L26">            con = cn.getConnection();</span>
+<span class="nc" id="L27">            ps = con.prepareStatement(sql);</span>
+<span class="nc" id="L28">            rs = ps.executeQuery();</span>
+
+<span class="nc bnc" id="L30" title="All 2 branches missed.">            while (rs.next()) {</span>
+<span class="nc" id="L31">                PedidoVenta ped = new PedidoVenta();</span>
+<span class="nc" id="L32">                ped.setIdpedido(Integer.parseInt(rs.getString(&quot;idpedidoventa&quot;)));</span>
+<span class="nc" id="L33">                ped.setIdusuario(Integer.parseInt(rs.getString(&quot;fkidusuario&quot;)));</span>
+<span class="nc" id="L34">                ped.setFecha(rs.getString(&quot;fecha&quot;));</span>
+<span class="nc" id="L35">                ped.setEstado(rs.getString(&quot;estado&quot;));</span>
+<span class="nc" id="L36">                ped.setTxrid(rs.getString(&quot;txrid&quot;));</span>
+<span class="nc" id="L37">                ped.setLacchainid(rs.getString(&quot;lacchainid&quot;));</span>
+<span class="nc" id="L38">                ped.setHash(rs.getString(&quot;hash&quot;));</span>
+<span class="nc" id="L39">                list.add(ped);</span>
+
+<span class="nc" id="L41">            }</span>
+
+<span class="nc" id="L43">        } catch (SQLException e) {</span>
+<span class="nc" id="L44">            logger.log(Level.WARNING, e.toString());</span>
+<span class="nc" id="L45">        }</span>
+<span class="nc" id="L46">        return list;</span>
+    }
+
+    @Override
+    public PedidoVenta list(int id) {
+<span class="nc" id="L51">        String sql = &quot;select * from tbpedidoventa where idpedidoventa=?&quot;;</span>
+<span class="nc" id="L52">        PedidoVenta ped = new PedidoVenta();</span>
+        try {
+<span class="nc" id="L54">            con = cn.getConnection();</span>
+<span class="nc" id="L55">            ps = con.prepareStatement(sql);</span>
+<span class="nc" id="L56">            ps.setInt(1, id);</span>
+<span class="nc" id="L57">            rs = ps.executeQuery();</span>
+
+<span class="nc bnc" id="L59" title="All 2 branches missed.">            while (rs.next()) {</span>
+
+<span class="nc" id="L61">                ped.setIdpedido(Integer.parseInt(rs.getString(&quot;idpedidoventa&quot;)));</span>
+<span class="nc" id="L62">                ped.setIdusuario(Integer.parseInt(rs.getString(&quot;fkidusuario&quot;)));</span>
+<span class="nc" id="L63">                ped.setFecha(rs.getString(&quot;fecha&quot;));</span>
+<span class="nc" id="L64">                ped.setEstado(rs.getString(&quot;estado&quot;));</span>
+<span class="nc" id="L65">                ped.setTxrid(rs.getString(&quot;txrid&quot;));</span>
+<span class="nc" id="L66">                ped.setLacchainid(rs.getString(&quot;txrid&quot;));</span>
+<span class="nc" id="L67">                ped.setHash(rs.getString(&quot;hash&quot;));</span>
+            }
+
+<span class="nc" id="L70">        } catch (SQLException e) {</span>
+<span class="nc" id="L71">            logger.log(Level.WARNING, e.toString());</span>
+<span class="nc" id="L72">            return null;</span>
+<span class="nc" id="L73">        }</span>
+
+<span class="nc" id="L75">        return ped;</span>
+    }
+
+    @Override
+    public boolean add(PedidoVenta ped) {
+<span class="fc" id="L80">        String sql = &quot;insert into tbpedidoventa(fkidusuario,fecha,estado) values(?,?,?)&quot;;</span>
+
+        try {
+<span class="fc" id="L83">            con = cn.getConnection();</span>
+<span class="fc" id="L84">            ps = con.prepareStatement(sql);</span>
+
+<span class="fc" id="L86">            ps.setInt(1, ped.getIdusuario());</span>
+<span class="fc" id="L87">            ps.setString(2, ped.getFecha());</span>
+<span class="fc" id="L88">            ps.setString(3, ped.getEstado());</span>
+
+<span class="fc" id="L90">            ps.executeUpdate();</span>
+
+<span class="nc" id="L92">        } catch (SQLException e) {</span>
+<span class="nc" id="L93">            logger.log(Level.WARNING, e.toString());</span>
+<span class="nc" id="L94">            return false;</span>
+<span class="fc" id="L95">        }</span>
+<span class="fc" id="L96">        return true;</span>
+
+    }
+
+    public int contarpedidos() {
+<span class="nc" id="L101">        String sql = &quot;SELECT idpedidoventa FROM tbpedidoventa ORDER BY idpedidoventa DESC LIMIT 1&quot;;</span>
+
+        try {
+<span class="nc" id="L104">            con = cn.getConnection();</span>
+<span class="nc" id="L105">            ps = con.prepareStatement(sql);</span>
+
+<span class="nc" id="L107">            rs = ps.executeQuery();</span>
+<span class="nc" id="L108">            rs.next();</span>
+
+<span class="nc" id="L110">            return (Integer.parseInt(rs.getString(&quot;idpedidoventa&quot;))) + 1;</span>
+<span class="nc" id="L111">        } catch (SQLException e) {</span>
+<span class="nc" id="L112">            logger.log(Level.WARNING, e.toString());</span>
+<span class="nc" id="L113">            return 1;</span>
+        }
+
+    }
+
+    @Override
+    public boolean edit(PedidoVenta ped) {
+<span class="fc" id="L120">        String sql = &quot;update tbpedidoventa set txrid=?, fkidusuario=?, fecha=?, estado=? where idpedidoventa=?&quot;;</span>
+
+        try {
+<span class="fc" id="L123">            con = cn.getConnection();</span>
+<span class="fc" id="L124">            ps = con.prepareStatement(sql);</span>
+
+<span class="fc" id="L126">            ps.setString(1, ped.getTxrid());</span>
+<span class="fc" id="L127">            ps.setInt(2, ped.getIdusuario());</span>
+<span class="fc" id="L128">            ps.setString(3, ped.getFecha());</span>
+<span class="fc" id="L129">            ps.setString(4, ped.getEstado());</span>
+<span class="fc" id="L130">            ps.setInt(5, ped.getIdpedido());</span>
+            
+<span class="fc" id="L132">            ps.executeUpdate();</span>
+            
+
+<span class="nc" id="L135">        } catch (SQLException e) {</span>
+<span class="nc" id="L136">            logger.log(Level.WARNING, e.toString());</span>
+<span class="nc" id="L137">            return false;</span>
+<span class="fc" id="L138">        }</span>
+<span class="fc" id="L139">        return true;</span>
+    }
+    
+
+    public boolean mtdAsignarHash(PedidoVenta ped) {
+<span class="nc" id="L144">        String sql = &quot;update tbpedidoventa set txrid=?,lacchainid=?,hash=? where idpedidoventa=?&quot;;</span>
+
+        try {
+<span class="nc" id="L147">            con = cn.getConnection();</span>
+<span class="nc" id="L148">            ps = con.prepareStatement(sql);</span>
+
+<span class="nc" id="L150">            ps.setString(1, ped.getTxrid());</span>
+<span class="nc" id="L151">            ps.setString(2, ped.getLacchainid());</span>
+<span class="nc" id="L152">            ps.setString(3, ped.getHash());</span>
+<span class="nc" id="L153">            ps.setInt(4, ped.getIdpedido());</span>
+            
+<span class="nc" id="L155">            ps.executeUpdate();</span>
+            
+
+<span class="nc" id="L158">        } catch (SQLException e) {</span>
+<span class="nc" id="L159">            logger.log(Level.WARNING, e.toString());</span>
+<span class="nc" id="L160">            return false;</span>
+<span class="nc" id="L161">        }</span>
+<span class="nc" id="L162">        return true;</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Controlador.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">HACLLaditec</a> &gt; <a href="index.source.html" class="el_package">Controlador</a> &gt; <span class="el_source">Controlador.java</span></div><h1>Controlador.java</h1><pre class="source lang-java linenums">package Controlador;
+
+import Interfaces.crudPedidoVenta;
+import Interfaces.crudRepuesto;
+import Interfaces.crudUsuarios;
+import Modelo.*;
+import ModeloDAO.*;
+
+/*
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+ */
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.*;
+
+/**
+ *
+ * @author HACL
+ */
+<span class="fc" id="L30">public class Controlador extends HttpServlet {</span>
+
+<span class="fc" id="L32">    private static Logger logger = Logger.getLogger(&quot;MyLog&quot;);</span>
+    private static final String MESSAGE_AGREGADO = &quot;se ha Agregado correctamente&quot;;
+    private static final String MESSAGE_EDITADO = &quot;se ha Editado correctamente&quot;;
+    private static final String MESSAGE_ERROR_DB = &quot;error de base de dato&quot;;
+
+    
+
+    // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;HttpServlet methods. Click on the + sign on the left to edit the code.&quot;&gt;
+    /**
+     * Handles the HTTP &lt;code&gt;GET&lt;/code&gt; method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+<span class="fc" id="L51">        HttpSession sesion = request.getSession(true);</span>
+
+<span class="fc" id="L53">        PedidoVenta ped = new PedidoVenta();</span>
+<span class="fc" id="L54">        crudPedidoVenta dao = new PedidoVentaDAO();</span>
+<span class="fc" id="L55">        Repuesto rep = new Repuesto();</span>
+<span class="fc" id="L56">        crudRepuesto daorep = new RepuestoDAO();</span>
+<span class="fc" id="L57">        Usuario usu = new Usuario();</span>
+<span class="fc" id="L58">        crudUsuarios udao = new UsuariosDAO();</span>
+
+<span class="fc" id="L60">        String acceso = &quot;&quot;;</span>
+<span class="fc" id="L61">        String action = request.getParameter(&quot;accion&quot;);</span>
+
+<span class="pc bpc" id="L63" title="3 of 15 branches missed.">        switch (action) {</span>
+            case &quot;AgregarPedido&quot;:
+<span class="fc" id="L65">                acceso = &quot;VistaPedido/agregarPedido.jsp&quot;;</span>
+<span class="pc bpc" id="L66" title="1 of 2 branches missed.">                if (request.getParameter(&quot;AgregarPedidoDB&quot;) != null) {</span>
+                    try {
+
+<span class="fc" id="L69">                        ped.setIdusuario(Integer.parseInt(request.getParameter(&quot;txtUsuario&quot;)));</span>
+<span class="fc" id="L70">                        ped.setFecha(request.getParameter(&quot;txtFecha&quot;));</span>
+<span class="fc" id="L71">                        ped.setEstado(request.getParameter(&quot;txtEstado&quot;));</span>
+<span class="pc bpc" id="L72" title="1 of 2 branches missed.">                        if (dao.add(ped)) {</span>
+<span class="fc" id="L73">                            logger.log(Level.WARNING, MESSAGE_AGREGADO);</span>
+
+                        } else {
+<span class="nc" id="L76">                            logger.log(Level.WARNING, MESSAGE_ERROR_DB);</span>
+                        }
+
+<span class="fc" id="L79">                        acceso = &quot;VistaPedido/index.jsp&quot;;</span>
+
+<span class="nc" id="L81">                    } catch (NumberFormatException e) {</span>
+<span class="nc" id="L82">                        logger.log(Level.WARNING, e.toString());</span>
+<span class="pc" id="L83">                    }</span>
+                }
+                break;
+            case &quot;ListarPedido&quot;:
+<span class="fc" id="L87">                acceso = &quot;VistaPedido/index.jsp&quot;;</span>
+<span class="fc" id="L88">                break;</span>
+            case &quot;VerPedidosBoleta&quot;:
+<span class="fc" id="L90">                acceso = &quot;VerMisPedidos.jsp&quot;;</span>
+<span class="fc" id="L91">                break;</span>
+            case &quot;VerPedidosBoleta2&quot;:
+<span class="fc" id="L93">                acceso = &quot;VistaBoletaVenta/index.jsp&quot;;</span>
+<span class="fc" id="L94">                break;</span>
+            case &quot;EditarPedido&quot;:
+
+<span class="fc" id="L97">                acceso = &quot;VistaPedido/editarPedido.jsp&quot;;</span>
+<span class="fc" id="L98">                request.setAttribute(&quot;idped&quot;, request.getParameter(&quot;txtid&quot;));</span>
+<span class="pc bpc" id="L99" title="1 of 2 branches missed.">                if (request.getParameter(&quot;EditarPedidoDB&quot;) != null) {</span>
+                    try {
+<span class="fc" id="L101">                        ped.setIdpedido(Integer.parseInt(request.getParameter(&quot;txtPedido&quot;)));</span>
+<span class="fc" id="L102">                        ped.setIdusuario(Integer.parseInt(request.getParameter(&quot;txtUsuario&quot;)));</span>
+<span class="fc" id="L103">                        ped.setFecha(request.getParameter(&quot;txtFecha&quot;));</span>
+<span class="fc" id="L104">                        ped.setEstado(request.getParameter(&quot;txtEstado&quot;));</span>
+<span class="fc" id="L105">                        ped.setTxrid(request.getParameter(&quot;txtTxrid&quot;));</span>
+
+<span class="pc bpc" id="L107" title="1 of 2 branches missed.">                        if (dao.edit(ped)) {</span>
+<span class="fc" id="L108">                            logger.log(Level.WARNING, MESSAGE_EDITADO);</span>
+                        } else {
+<span class="nc" id="L110">                            logger.log(Level.WARNING, MESSAGE_ERROR_DB);</span>
+                        }
+
+<span class="fc" id="L113">                        acceso = &quot;VistaPedido/index.jsp&quot;;</span>
+
+<span class="nc" id="L115">                    } catch (NumberFormatException e) {</span>
+
+<span class="nc" id="L117">                        logger.log(Level.WARNING, e.toString());</span>
+<span class="pc" id="L118">                    }</span>
+
+                }
+                break;
+            case &quot;LogearUsuario&quot;:
+<span class="fc" id="L123">                acceso = &quot;Login.jsp&quot;;</span>
+<span class="fc" id="L124">                break;</span>
+            case &quot;LogoutUsuario&quot;:
+<span class="fc" id="L126">                acceso = &quot;index.jsp&quot;;</span>
+<span class="fc" id="L127">                sesion.invalidate();</span>
+<span class="fc" id="L128">                break;</span>
+            case &quot;RegistrarUsuario&quot;:
+
+<span class="fc" id="L131">                acceso = &quot;Register.jsp&quot;;</span>
+<span class="pc bpc" id="L132" title="1 of 2 branches missed.">                if (request.getParameter(&quot;RegistrarUsuarioDB&quot;) != null) {</span>
+                    try {
+
+<span class="fc" id="L135">                        usu.setNomusuario(request.getParameter(&quot;txtnomusuario&quot;));</span>
+<span class="fc" id="L136">                        usu.setEmail(request.getParameter(&quot;txtemail&quot;));</span>
+<span class="fc" id="L137">                        usu.setClave(request.getParameter(&quot;txtclave&quot;));</span>
+<span class="fc" id="L138">                        usu.setFkidrol(1);</span>
+<span class="fc" id="L139">                        usu.setEstado(&quot;A&quot;);</span>
+
+<span class="pc bpc" id="L141" title="1 of 2 branches missed.">                        if (udao.add(usu)) {</span>
+<span class="fc" id="L142">                            logger.log(Level.WARNING, MESSAGE_AGREGADO);</span>
+                        } else {
+<span class="nc" id="L144">                            logger.log(Level.WARNING, MESSAGE_ERROR_DB);</span>
+
+                        }
+
+<span class="fc" id="L148">                        acceso = &quot;Login.jsp&quot;;</span>
+
+<span class="nc" id="L150">                    } catch (Exception e) {</span>
+<span class="nc" id="L151">                        logger.log(Level.WARNING, e.toString());</span>
+<span class="pc" id="L152">                    }</span>
+                }
+                break;
+
+            case &quot;listarUsuarios&quot;:
+<span class="nc" id="L157">                acceso = &quot;VistaUsuarios/index.jsp&quot;;</span>
+<span class="nc" id="L158">                break;</span>
+            case &quot;AgregarUsuarios&quot;:
+
+<span class="fc" id="L161">                acceso = &quot;VistaUsuarios/agregarUsuarios.jsp&quot;;</span>
+<span class="pc bpc" id="L162" title="1 of 2 branches missed.">                if (request.getParameter(&quot;AgregarUsuariosDB&quot;) != null) {</span>
+                    try {
+
+<span class="fc" id="L165">                        usu.setNomusuario(request.getParameter(&quot;txtnomusuario&quot;));</span>
+<span class="fc" id="L166">                        usu.setEmail(request.getParameter(&quot;txtemail&quot;));</span>
+<span class="fc" id="L167">                        usu.setClave(request.getParameter(&quot;txtclave&quot;));</span>
+<span class="fc" id="L168">                        usu.setFkidrol(Integer.parseInt(request.getParameter(&quot;txtfkidrol&quot;)));</span>
+<span class="fc" id="L169">                        usu.setEstado(request.getParameter(&quot;txtestado&quot;));</span>
+<span class="pc bpc" id="L170" title="1 of 2 branches missed.">                        if (udao.add(usu)) {</span>
+<span class="fc" id="L171">                            logger.log(Level.WARNING, MESSAGE_AGREGADO);</span>
+                        } else {
+<span class="nc" id="L173">                            logger.log(Level.WARNING, MESSAGE_ERROR_DB);</span>
+                        }
+
+<span class="fc" id="L176">                        acceso = &quot;VistaUsuarios/index.jsp&quot;;</span>
+
+<span class="nc" id="L178">                    } catch (NumberFormatException e) {</span>
+<span class="nc" id="L179">                        logger.log(Level.WARNING, e.toString());</span>
+<span class="pc" id="L180">                    }</span>
+
+                }
+                break;
+            case &quot;EditarUsuarios&quot;:
+
+<span class="fc" id="L186">                acceso = &quot;VistaUsuarios/editarUsuarios.jsp&quot;;</span>
+<span class="fc" id="L187">                request.setAttribute(&quot;user&quot;, request.getParameter(&quot;txtuser&quot;));</span>
+<span class="pc bpc" id="L188" title="1 of 2 branches missed.">                if (request.getParameter(&quot;EditarUsuariosDB&quot;) != null) {</span>
+                    try {
+<span class="fc" id="L190">                        usu.setIdusuario(Integer.parseInt(request.getParameter(&quot;txtidusuario&quot;)));</span>
+<span class="fc" id="L191">                        usu.setNomusuario(request.getParameter(&quot;txtnomusuario&quot;));</span>
+<span class="fc" id="L192">                        usu.setEmail(request.getParameter(&quot;txtemail&quot;));</span>
+<span class="fc" id="L193">                        usu.setClave(request.getParameter(&quot;txtclave&quot;));</span>
+<span class="fc" id="L194">                        usu.setFkidrol(Integer.parseInt(request.getParameter(&quot;txtfkidrol&quot;)));</span>
+<span class="fc" id="L195">                        usu.setEstado(request.getParameter(&quot;txtestado&quot;));</span>
+
+<span class="pc bpc" id="L197" title="1 of 2 branches missed.">                        if (udao.edit(usu)) {</span>
+<span class="fc" id="L198">                            logger.log(Level.WARNING, MESSAGE_EDITADO);</span>
+                        } else {
+<span class="nc" id="L200">                            logger.log(Level.WARNING, MESSAGE_ERROR_DB);</span>
+                        }
+
+<span class="fc" id="L203">                        acceso = &quot;VistaUsuarios/index.jsp&quot;;</span>
+
+<span class="nc" id="L205">                    } catch (NumberFormatException e) {</span>
+<span class="nc" id="L206">                        logger.log(Level.WARNING, e.toString());</span>
+<span class="pc" id="L207">                    }</span>
+
+                }
+                break;
+            case &quot;ListarRepuestos&quot;:
+<span class="nc" id="L212">                acceso = &quot;VistaRepuesto/index.jsp&quot;;</span>
+<span class="nc" id="L213">                break;</span>
+            case &quot;AgregarRepuesto&quot;:
+<span class="fc" id="L215">                acceso = &quot;VistaRepuesto/agregarRepuesto.jsp&quot;;</span>
+<span class="pc bpc" id="L216" title="1 of 2 branches missed.">                if (request.getParameter(&quot;AgregarRepuestoDB&quot;) != null) {</span>
+                    try {
+<span class="fc" id="L218">                        rep.setIdrepuesto(Integer.parseInt(request.getParameter(&quot;txtRepuesto&quot;)));</span>
+<span class="fc" id="L219">                        rep.setFkidalmacen(Integer.parseInt(request.getParameter(&quot;txtFkidalmacen&quot;)));</span>
+<span class="fc" id="L220">                        rep.setFkidestado(Integer.parseInt(request.getParameter(&quot;txtFkidestado&quot;)));</span>
+<span class="fc" id="L221">                        rep.setNombre(request.getParameter(&quot;txtNombre&quot;));</span>
+<span class="fc" id="L222">                        rep.setFkidcategoria(Integer.parseInt(request.getParameter(&quot;txtFkidcategoria&quot;)));</span>
+<span class="fc" id="L223">                        rep.setImagen(request.getParameter(&quot;txtImagen&quot;));</span>
+<span class="fc" id="L224">                        rep.setPreciounitario(Double.parseDouble(request.getParameter(&quot;txtPrecioUnitario&quot;)));</span>
+<span class="fc" id="L225">                        rep.setCantidad(Integer.parseInt(request.getParameter(&quot;txtcantidad&quot;)));</span>
+
+<span class="pc bpc" id="L227" title="1 of 2 branches missed.">                        if (daorep.add(rep)) {</span>
+<span class="fc" id="L228">                            logger.log(Level.WARNING, MESSAGE_AGREGADO);</span>
+                        } else {
+<span class="nc" id="L230">                            logger.log(Level.WARNING, MESSAGE_ERROR_DB);</span>
+                        }
+<span class="fc" id="L232">                        acceso = &quot;VistaRepuesto/index.jsp&quot;;</span>
+
+<span class="nc" id="L234">                    } catch (NumberFormatException e) {</span>
+<span class="nc" id="L235">                        logger.log(Level.WARNING, e.toString());</span>
+<span class="pc" id="L236">                    }</span>
+                }
+                break;
+            case &quot;EditarRepuesto&quot;:
+
+<span class="fc" id="L241">                acceso = &quot;VistaRepuesto/editarRepuesto.jsp&quot;;</span>
+
+<span class="fc" id="L243">                request.setAttribute(&quot;id&quot;, request.getParameter(&quot;txtid&quot;));</span>
+<span class="pc bpc" id="L244" title="1 of 2 branches missed.">                if (request.getParameter(&quot;EditarRepuestoDB&quot;) != null) {</span>
+                    try {
+<span class="fc" id="L246">                        rep.setIdrepuesto(Integer.parseInt(request.getParameter(&quot;txtRepuesto&quot;)));</span>
+<span class="fc" id="L247">                        rep.setFkidalmacen(Integer.parseInt(request.getParameter(&quot;txtFkidalmacen&quot;)));</span>
+<span class="fc" id="L248">                        rep.setFkidestado(Integer.parseInt(request.getParameter(&quot;txtFkidestado&quot;)));</span>
+<span class="fc" id="L249">                        rep.setNombre(request.getParameter(&quot;txtNombre&quot;));</span>
+<span class="fc" id="L250">                        rep.setFkidcategoria(Integer.parseInt(request.getParameter(&quot;txtFkidcategoria&quot;)));</span>
+<span class="fc" id="L251">                        rep.setImagen(request.getParameter(&quot;txtImagen&quot;));</span>
+<span class="fc" id="L252">                        rep.setPreciounitario(Double.parseDouble(request.getParameter(&quot;txtPrecioUnitario&quot;)));</span>
+<span class="fc" id="L253">                        rep.setCantidad(Integer.parseInt(request.getParameter(&quot;txtCantidad&quot;)));</span>
+
+<span class="pc bpc" id="L255" title="1 of 2 branches missed.">                        if (daorep.edit(rep)) {</span>
+
+<span class="nc" id="L257">                            logger.log(Level.WARNING, MESSAGE_EDITADO);</span>
+
+                        } else {
+<span class="fc" id="L260">                            logger.log(Level.WARNING, MESSAGE_ERROR_DB);</span>
+                        }
+
+<span class="fc" id="L263">                        acceso = &quot;VistaRepuesto/index.jsp&quot;;</span>
+
+<span class="nc" id="L265">                    } catch (NumberFormatException e) {</span>
+<span class="nc" id="L266">                        logger.log(Level.WARNING, e.toString());</span>
+<span class="pc" id="L267">                    }</span>
+
+                }
+                break;
+            default:
+<span class="nc" id="L272">                acceso = &quot;Login.jsp&quot;;</span>
+
+        }
+
+<span class="fc" id="L276">        RequestDispatcher vista = request.getRequestDispatcher(acceso);</span>
+
+<span class="fc" id="L278">        vista.forward(request, response);</span>
+
+<span class="fc" id="L280">    }</span>
+
+    /**
+     * Handles the HTTP &lt;code&gt;POST&lt;/code&gt; method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+<span class="fc" id="L293">        HttpSession sesion = request.getSession(true);</span>
+<span class="fc" id="L294">        Usuario usu = new Usuario();</span>
+<span class="fc" id="L295">        UsuariosDAO udao = new UsuariosDAO();</span>
+<span class="fc" id="L296">        String acceso = &quot;&quot;;</span>
+<span class="fc" id="L297">        String action = request.getParameter(&quot;accion&quot;);</span>
+
+<span class="pc bpc" id="L299" title="1 of 3 branches missed.">        switch (action) {</span>
+
+            case &quot;LogearUsuario&quot;:
+<span class="fc" id="L302">                acceso = &quot;Login.jsp&quot;;</span>
+<span class="pc bpc" id="L303" title="1 of 2 branches missed.">                if (request.getParameter(&quot;LogearUsuarioForm&quot;) != null) {</span>
+                    try {
+<span class="fc" id="L305">                        LoginDAO logindao = new LoginDAO();</span>
+<span class="fc" id="L306">                        UsuariosDAO userdao = new UsuariosDAO();</span>
+
+<span class="fc" id="L308">                        String user = request.getParameter(&quot;txtEmail&quot;);</span>
+<span class="fc" id="L309">                        String clave = request.getParameter(&quot;txtPassword&quot;);</span>
+
+<span class="fc" id="L311">                        usu = logindao.loginUsuario(user, clave);</span>
+<span class="pc bpc" id="L312" title="1 of 2 branches missed.">                        if (usu != null) {</span>
+
+<span class="pc bpc" id="L314" title="1 of 2 branches missed.">                            if (usu.getEstado().equalsIgnoreCase(&quot;A&quot;)) {</span>
+
+<span class="fc" id="L316">                                acceso = &quot;cruds.jsp&quot;;</span>
+<span class="fc" id="L317">                                sesion.setAttribute(&quot;fkidrolusuario&quot;, usu.getFkidrol());</span>
+<span class="fc" id="L318">                                sesion.setAttribute(&quot;idusuario&quot;, usu.getIdusuario());</span>
+<span class="fc" id="L319">                                sesion.setAttribute(&quot;nomusuariologin&quot;, usu.getNomusuario());</span>
+
+                            }
+
+                        } else {
+<span class="nc" id="L324">                            userdao.Updateintentos(user);</span>
+<span class="nc" id="L325">                            int intentos = userdao.sacarintentos(user);</span>
+
+<span class="nc bnc" id="L327" title="All 2 branches missed.">                            if (intentos &gt;= 3) {</span>
+<span class="nc" id="L328">                                userdao.Updatebloqueos(user);</span>
+<span class="nc" id="L329">                                userdao.DesactivarCuenta(user);</span>
+                            }
+
+                        }
+
+<span class="nc" id="L334">                    } catch (Exception e) {</span>
+<span class="nc" id="L335">                        logger.log(Level.WARNING, e.toString());</span>
+<span class="pc" id="L336">                    }</span>
+                }
+                break;
+
+            case &quot;RegistrarUsuario&quot;:
+
+<span class="fc" id="L342">                acceso = &quot;Register.jsp&quot;;</span>
+<span class="pc bpc" id="L343" title="1 of 2 branches missed.">                if (request.getParameter(&quot;RegistrarUsuarioDB&quot;) != null) {</span>
+                    try {
+
+<span class="fc" id="L346">                        usu.setNomusuario(request.getParameter(&quot;txtnomusuario&quot;));</span>
+<span class="fc" id="L347">                        usu.setEmail(request.getParameter(&quot;txtemail&quot;));</span>
+<span class="fc" id="L348">                        usu.setClave(request.getParameter(&quot;txtclave&quot;));</span>
+<span class="fc" id="L349">                        usu.setFkidrol(1);</span>
+<span class="fc" id="L350">                        usu.setEstado(&quot;A&quot;);</span>
+
+<span class="pc bpc" id="L352" title="1 of 2 branches missed.">                        if (udao.add(usu)) {</span>
+<span class="fc" id="L353">                            logger.log(Level.WARNING, MESSAGE_AGREGADO);</span>
+                        } else {
+<span class="nc" id="L355">                            logger.log(Level.WARNING, MESSAGE_ERROR_DB);</span>
+                        }
+
+<span class="fc" id="L358">                        acceso = &quot;Login.jsp&quot;;</span>
+
+<span class="nc" id="L360">                    } catch (Exception e) {</span>
+<span class="nc" id="L361">                        logger.log(Level.WARNING, e.toString());</span>
+<span class="pc" id="L362">                    }</span>
+                }
+                break;
+            default:
+<span class="nc" id="L366">                acceso = &quot;Login.jsp&quot;;</span>
+                break;
+
+        }
+<span class="fc" id="L370">        RequestDispatcher vista = request.getRequestDispatcher(acceso);</span>
+
+<span class="fc" id="L372">        vista.forward(request, response);</span>
+
+<span class="fc" id="L374">    }</span>
+
+    /**
+     * Returns a short description of the servlet.
+     *
+     * @return a String containing servlet description
+     */
+    @Override
+    public String getServletInfo() {
+<span class="nc" id="L383">        return &quot;Short description&quot;;</span>
+    }// &lt;/editor-fold&gt;
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

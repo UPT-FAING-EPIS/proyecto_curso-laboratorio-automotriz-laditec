@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PedidoVenta.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">HACLLaditec</a> &gt; <a href="index.source.html" class="el_package">Modelo</a> &gt; <span class="el_source">PedidoVenta.java</span></div><h1>PedidoVenta.java</h1><pre class="source lang-java linenums">/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Modelo;
+
+
+public class PedidoVenta {
+    
+    private int idpedido;
+    private int idusuario;
+    private String fecha;
+    private String estado;
+    private String hash;
+    private String lacchainid;
+    private String txrid;
+
+    public String getHash() {
+<span class="fc" id="L19">        return hash;</span>
+    }
+
+    public void setHash(String hash) {
+<span class="fc" id="L23">        this.hash = hash;</span>
+<span class="fc" id="L24">    }</span>
+
+    public String getLacchainid() {
+<span class="fc" id="L27">        return lacchainid;</span>
+    }
+
+    public void setLacchainid(String lacchainid) {
+<span class="fc" id="L31">        this.lacchainid = lacchainid;</span>
+<span class="fc" id="L32">    }</span>
+
+    public String getTxrid() {
+<span class="fc" id="L35">        return txrid;</span>
+    }
+
+    public void setTxrid(String txrid) {
+<span class="fc" id="L39">        this.txrid = txrid;</span>
+<span class="fc" id="L40">    }</span>
+    
+    
+
+    
+    public int getIdpedido() {
+<span class="fc" id="L46">        return idpedido;</span>
+    }
+
+    public void setIdpedido(int idpedido) {
+<span class="fc" id="L50">        this.idpedido = idpedido;</span>
+<span class="fc" id="L51">    }</span>
+
+    public int getIdusuario() {
+<span class="fc" id="L54">        return idusuario;</span>
+    }
+
+    public void setIdusuario(int idusuario) {
+<span class="fc" id="L58">        this.idusuario = idusuario;</span>
+<span class="fc" id="L59">    }</span>
+
+    public String getFecha() {
+<span class="fc" id="L62">        return fecha;</span>
+    }
+
+    public void setFecha(String fecha) {
+<span class="fc" id="L66">        this.fecha = fecha;</span>
+<span class="fc" id="L67">    }</span>
+
+    public String getEstado() {
+<span class="fc" id="L70">        return estado;</span>
+    }
+
+    public void setEstado(String estado) {
+<span class="fc" id="L74">        this.estado = estado;</span>
+<span class="fc" id="L75">    }</span>
+
+<span class="nc" id="L77">    public PedidoVenta(int idpedido, int idusuario, String fecha, String estado, String hash, String lacchainid, String txrid) {</span>
+<span class="nc" id="L78">        this.idpedido = idpedido;</span>
+<span class="nc" id="L79">        this.idusuario = idusuario;</span>
+<span class="nc" id="L80">        this.fecha = fecha;</span>
+<span class="nc" id="L81">        this.estado = estado;</span>
+<span class="nc" id="L82">        this.hash = hash;</span>
+<span class="nc" id="L83">        this.lacchainid = lacchainid;</span>
+<span class="nc" id="L84">        this.txrid = txrid;</span>
+<span class="nc" id="L85">    }</span>
+
+    
+    
+<span class="fc" id="L89">    public PedidoVenta() {</span>
+<span class="fc" id="L90">    }</span>
+    
+    
+    
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

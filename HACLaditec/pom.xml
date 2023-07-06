@@ -51,7 +51,7 @@
             <scope>test</scope>
         </dependency>
         
- <!-- DEPENDECIAS PARA ALLURE -->           
+        <!-- DEPENDECIAS PARA ALLURE -->           
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-cucumber6-jvm</artifactId>
@@ -85,50 +85,51 @@
         </dependencies>
     </dependencyManagement>
 
- <!-- FIN  -->    
+    <!-- FIN  -->    
 
 
 
 
     <build>
         <plugins>
-			<plugin>
-				<groupId>org.sonarsource.scanner.maven</groupId>
-				<artifactId>sonar-maven-plugin</artifactId>
-				<version>3.9.0.2155</version>
-                        </plugin>
- 			<plugin>
-				<groupId>org.jacoco</groupId>
-				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.8.7</version>
-				<executions>
-					<execution>
-						<id>prepare-agent</id>
-						<goals>
-							<goal>prepare-agent</goal>
-						</goals>
-					</execution>
-					<execution>
-						<id>report</id>
-						<phase>prepare-package</phase>
-						<goals>
-							<goal>report</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>           
-            
- <!-- PLUGINS ALLURE  -->           
             <plugin>
-                    <groupId>io.qameta.allure</groupId>
-                    <artifactId>allure-maven</artifactId>
-                    <version>2.10.0</version>
-                    <configuration>
-                            <reportVersion>2.10.0</reportVersion>
-                    </configuration>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.9.0.2155</version>
             </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.7</version>
+                <executions>
+                    <execution>
+                        <id>prepare-agent</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>report</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>           
             
- <!-- FIN PLUGINS ALLURE -->              
+            <!-- PLUGINS ALLURE  -->           
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>2.10.0</version>
+                <configuration>
+                    <resultsDirectory>${project.build.directory}/../allure-results</resultsDirectory>
+                </configuration>
+            </plugin>
+
+            
+            <!-- FIN PLUGINS ALLURE -->              
             
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

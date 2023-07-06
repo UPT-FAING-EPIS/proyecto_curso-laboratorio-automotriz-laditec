@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UsuariosDAO.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">HACLLaditec</a> &gt; <a href="index.source.html" class="el_package">ModeloDAO</a> &gt; <span class="el_source">UsuariosDAO.java</span></div><h1>UsuariosDAO.java</h1><pre class="source lang-java linenums">/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package ModeloDAO;
+
+import Config.conexion;
+import Interfaces.crudUsuarios;
+import Modelo.Usuario;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+/**
+ *
+ * @author
+ */
+<span class="fc" id="L24">public class UsuariosDAO implements crudUsuarios {</span>
+
+<span class="fc" id="L26">    conexion cn = new conexion();</span>
+    Connection con;
+    PreparedStatement ps;
+    ResultSet rs;
+    Statement st;
+<span class="fc" id="L31">    private static Logger logger = Logger.getLogger(&quot;MyLog&quot;);</span>
+
+    @Override
+    public List listar() {
+<span class="nc" id="L35">        ArrayList&lt;Usuario&gt; list = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L36">        String sql = &quot;select * from tbusuario&quot;;</span>
+        try {
+<span class="nc" id="L38">            con = cn.getConnection();</span>
+<span class="nc" id="L39">            ps = con.prepareStatement(sql);</span>
+<span class="nc" id="L40">            rs = ps.executeQuery();</span>
+
+<span class="nc bnc" id="L42" title="All 2 branches missed.">            while (rs.next()) {</span>
+<span class="nc" id="L43">                Usuario usu = new Usuario();</span>
+<span class="nc" id="L44">                usu.setIdusuario(Integer.parseInt(rs.getString(&quot;idusuario&quot;)));</span>
+<span class="nc" id="L45">                usu.setNomusuario(rs.getString(&quot;nomusuario&quot;));</span>
+<span class="nc" id="L46">                usu.setEmail(rs.getString(&quot;email&quot;));</span>
+<span class="nc" id="L47">                usu.setClave(rs.getString(&quot;clave&quot;));</span>
+<span class="nc" id="L48">                usu.setFkidrol(Integer.parseInt(rs.getString(&quot;fkidrol&quot;)));</span>
+<span class="nc" id="L49">                usu.setEstado(rs.getString(&quot;estado&quot;));</span>
+<span class="nc" id="L50">                list.add(usu);</span>
+<span class="nc" id="L51">            }</span>
+
+<span class="nc" id="L53">        } catch (SQLException e) {</span>
+<span class="nc" id="L54">            logger.log(Level.WARNING, e.toString());</span>
+<span class="nc" id="L55">        }</span>
+<span class="nc" id="L56">        return list;</span>
+    }
+
+    @Override
+    public Modelo.Usuario list(int id) {
+<span class="nc" id="L61">        String sql = &quot;select * from tbusuario where idusuario=?&quot;;</span>
+<span class="nc" id="L62">        Usuario usu = new Usuario();</span>
+        try {
+<span class="nc" id="L64">            con = cn.getConnection();</span>
+<span class="nc" id="L65">            ps = con.prepareStatement(sql);</span>
+<span class="nc" id="L66">            ps.setInt(1, id);</span>
+<span class="nc" id="L67">            rs = ps.executeQuery();</span>
+
+<span class="nc bnc" id="L69" title="All 2 branches missed.">            while (rs.next()) {</span>
+
+<span class="nc" id="L71">                usu.setIdusuario(Integer.parseInt(rs.getString(&quot;idusuario&quot;)));</span>
+<span class="nc" id="L72">                usu.setNomusuario(rs.getString(&quot;nomusuario&quot;));</span>
+<span class="nc" id="L73">                usu.setEmail(rs.getString(&quot;email&quot;));</span>
+<span class="nc" id="L74">                usu.setClave(rs.getString(&quot;clave&quot;));</span>
+<span class="nc" id="L75">                usu.setFkidrol(Integer.parseInt(rs.getString(&quot;fkidrol&quot;)));</span>
+<span class="nc" id="L76">                usu.setEstado(rs.getString(&quot;estado&quot;));</span>
+
+            }
+
+<span class="nc" id="L80">        } catch (SQLException e) {</span>
+<span class="nc" id="L81">            logger.log(Level.WARNING, e.toString());</span>
+<span class="nc" id="L82">            return null;</span>
+<span class="nc" id="L83">        }</span>
+
+<span class="nc" id="L85">        return usu;</span>
+    }
+
+    public boolean Updateintentos(String email) {
+
+<span class="nc" id="L90">        String sql = &quot;Update tbusuario set intentos=intentos+1 WHERE email=? &quot;;</span>
+
+        try {
+<span class="nc" id="L93">            con = cn.getConnection();</span>
+<span class="nc" id="L94">            ps = con.prepareStatement(sql);</span>
+<span class="nc" id="L95">            ps.setString(1, email);</span>
+<span class="nc" id="L96">            ps.executeUpdate();</span>
+
+<span class="nc" id="L98">            return true;</span>
+
+<span class="nc" id="L100">        } catch (SQLException e) {</span>
+<span class="nc" id="L101">            logger.log(Level.WARNING, e.toString());</span>
+<span class="nc" id="L102">            return false;</span>
+        }
+
+    }
+
+    public int sacarintentos(String email) {
+<span class="nc" id="L108">        String sql = &quot;SELECT intentos FROM tbusuario where email=? &quot;;</span>
+
+        try {
+<span class="nc" id="L111">            con = cn.getConnection();</span>
+<span class="nc" id="L112">            ps = con.prepareStatement(sql);</span>
+<span class="nc" id="L113">            ps.setString(1, email);</span>
+<span class="nc" id="L114">            rs = ps.executeQuery();</span>
+            
+<span class="nc" id="L116">            rs.next();</span>
+
+<span class="nc" id="L118">            return Integer.parseInt(rs.getString(1));</span>
+
+<span class="nc" id="L120">        } catch (SQLException e) {</span>
+<span class="nc" id="L121">            logger.log(Level.WARNING, e.toString());</span>
+<span class="nc" id="L122">            return 0;</span>
+        }
+
+    }
+
+    public boolean DesactivarCuenta(String email) {
+
+<span class="nc" id="L129">        String sql = &quot;Update tbusuario set estado='I' WHERE email=? &quot;;</span>
+
+        try {
+<span class="nc" id="L132">            con = cn.getConnection();</span>
+<span class="nc" id="L133">            ps = con.prepareStatement(sql);</span>
+<span class="nc" id="L134">            ps.setString(1, email);</span>
+<span class="nc" id="L135">            ps.executeUpdate();</span>
+           
+<span class="nc" id="L137">            return true;</span>
+
+<span class="nc" id="L139">        } catch (SQLException e) {</span>
+<span class="nc" id="L140">            logger.log(Level.WARNING, e.toString());</span>
+<span class="nc" id="L141">            return false;</span>
+        }
+
+    }
+
+    public boolean Updatebloqueos(String email) {
+
+<span class="nc" id="L148">        String sql = &quot;Update tbusuario set bloqueos=bloqueos+1 WHERE email=? &quot;;</span>
+
+        try {
+<span class="nc" id="L151">            con = cn.getConnection();</span>
+<span class="nc" id="L152">            ps = con.prepareStatement(sql);</span>
+<span class="nc" id="L153">            ps.setString(1, email);</span>
+<span class="nc" id="L154">            ps.executeUpdate();</span>
+            
+            
+<span class="nc" id="L157">            return true;</span>
+
+<span class="nc" id="L159">        } catch (SQLException e) {</span>
+<span class="nc" id="L160">            logger.log(Level.WARNING, e.toString());</span>
+<span class="nc" id="L161">            return false;</span>
+        }
+
+    }
+
+    @Override
+    public boolean add(Usuario usu) {
+<span class="fc" id="L168">        String sql = &quot;insert into tbusuario(nomusuario,email,clave,fkidrol,estado) values(?,?,?,?,?)&quot;;</span>
+
+        try {
+<span class="fc" id="L171">            con = cn.getConnection();</span>
+<span class="fc" id="L172">            ps = con.prepareStatement(sql);</span>
+
+<span class="fc" id="L174">            ps.setString(1, usu.getNomusuario());</span>
+<span class="fc" id="L175">            ps.setString(2, usu.getEmail());</span>
+<span class="fc" id="L176">            ps.setString(3, usu.getClave());</span>
+<span class="fc" id="L177">            ps.setInt(4, usu.getFkidrol());</span>
+<span class="fc" id="L178">            ps.setString(5, usu.getEstado());</span>
+            
+<span class="fc" id="L180">            ps.executeUpdate();</span>
+
+<span class="nc" id="L182">        } catch (SQLException e) {</span>
+<span class="nc" id="L183">            logger.log(Level.WARNING, e.toString());</span>
+<span class="nc" id="L184">            return false;</span>
+<span class="fc" id="L185">        }</span>
+<span class="fc" id="L186">        return true;</span>
+    }
+
+    @Override
+    public boolean edit(Usuario usu) {
+<span class="fc" id="L191">        String sql = &quot;update tbusuario set nomusuario=?,email=?,clave=?,fkidrol=?,estado=? where idusuario=?&quot;;</span>
+
+        try {
+<span class="fc" id="L194">            con = cn.getConnection();</span>
+<span class="fc" id="L195">            ps = con.prepareStatement(sql);</span>
+            
+<span class="fc" id="L197">            ps.setString(1, usu.getNomusuario());</span>
+<span class="fc" id="L198">            ps.setString(2, usu.getEmail());</span>
+<span class="fc" id="L199">            ps.setString(3, usu.getClave());</span>
+<span class="fc" id="L200">            ps.setInt(4, usu.getFkidrol());</span>
+<span class="fc" id="L201">            ps.setString(5, usu.getEstado());</span>
+<span class="fc" id="L202">            ps.setInt(6, usu.getIdusuario());</span>
+            
+<span class="fc" id="L204">            ps.executeUpdate();</span>
+            
+
+<span class="nc" id="L207">        } catch (SQLException e) {</span>
+<span class="nc" id="L208">            logger.log(Level.WARNING, e.toString());</span>
+<span class="nc" id="L209">            return false;</span>
+<span class="fc" id="L210">        }</span>
+<span class="fc" id="L211">        return true;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

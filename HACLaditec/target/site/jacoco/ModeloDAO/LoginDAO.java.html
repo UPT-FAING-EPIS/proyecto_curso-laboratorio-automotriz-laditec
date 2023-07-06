@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>LoginDAO.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">HACLLaditec</a> &gt; <a href="index.source.html" class="el_package">ModeloDAO</a> &gt; <span class="el_source">LoginDAO.java</span></div><h1>LoginDAO.java</h1><pre class="source lang-java linenums">/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package ModeloDAO;
+
+import Config.conexion;
+import Interfaces.interfazLogin;
+import Modelo.Usuario;
+import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+<span class="fc" id="L14">public class LoginDAO implements interfazLogin {</span>
+
+<span class="fc" id="L16">    conexion cn = new conexion();</span>
+    Connection con;
+    PreparedStatement ps;
+    ResultSet rs;
+
+<span class="fc" id="L21">    private static Logger logger = Logger.getLogger(&quot;MyLog&quot;);</span>
+
+    public void setConnection(Connection con) {
+<span class="nc" id="L24">        this.con = con;</span>
+<span class="nc" id="L25">    }</span>
+
+    @Override
+    public Usuario loginUsuario(String user, String clave) {
+
+<span class="fc" id="L30">        Usuario objuser = new Usuario();</span>
+<span class="fc" id="L31">        String sql = &quot;select * from tbusuario where email=? and clave=? &quot;;</span>
+
+        try {
+<span class="fc" id="L34">            con = cn.getConnection();</span>
+<span class="fc" id="L35">            ps = con.prepareStatement(sql);</span>
+<span class="fc" id="L36">            ps.setString(1, user);</span>
+<span class="fc" id="L37">            ps.setString(2, clave);</span>
+<span class="fc" id="L38">            rs = ps.executeQuery();</span>
+<span class="pc bpc" id="L39" title="1 of 2 branches missed.">            if (rs != null) {</span>
+
+<span class="pc bpc" id="L41" title="1 of 2 branches missed.">                while (rs.next()) {</span>
+<span class="fc" id="L42">                    objuser.setIdusuario(Integer.parseInt(rs.getString(&quot;idusuario&quot;)));</span>
+<span class="fc" id="L43">                    objuser.setNomusuario(rs.getString(&quot;nomusuario&quot;));</span>
+<span class="fc" id="L44">                    objuser.setEmail(rs.getString(&quot;email&quot;));</span>
+<span class="fc" id="L45">                    objuser.setClave(rs.getString(&quot;clave&quot;));</span>
+<span class="fc" id="L46">                    objuser.setFkidrol(Integer.parseInt(rs.getString(&quot;fkidrol&quot;)));</span>
+<span class="fc" id="L47">                    objuser.setEstado(rs.getString(&quot;estado&quot;));</span>
+<span class="fc" id="L48">                    objuser.setIntentos(Integer.parseInt(rs.getString(&quot;intentos&quot;)));</span>
+
+<span class="fc" id="L50">                    return objuser;</span>
+                }
+
+            }
+
+<span class="nc" id="L55">        } catch (SQLException e) {</span>
+<span class="nc" id="L56">            logger.log(Level.WARNING, e.toString());</span>
+<span class="nc" id="L57">        }</span>
+<span class="nc" id="L58">        return null;</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

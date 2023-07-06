@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RepuestoDAO.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">HACLLaditec</a> &gt; <a href="index.source.html" class="el_package">ModeloDAO</a> &gt; <span class="el_source">RepuestoDAO.java</span></div><h1>RepuestoDAO.java</h1><pre class="source lang-java linenums">/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package ModeloDAO;
+
+import Config.conexion;
+import Interfaces.crudRepuesto;
+import Modelo.Repuesto;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+/**
+ *
+ * @author
+ */
+<span class="fc" id="L24">public class RepuestoDAO implements crudRepuesto {</span>
+
+<span class="fc" id="L26">    conexion cn = new conexion();</span>
+    Connection con;
+    PreparedStatement ps;
+    ResultSet rs;
+    Statement st;
+<span class="fc" id="L31">    private static Logger logger = Logger.getLogger(&quot;MyLog&quot;);</span>
+
+    @Override
+    public List listar() {
+
+<span class="nc" id="L36">        ArrayList&lt;Repuesto&gt; list = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L37">        String sql = &quot;select * from tbrepuesto&quot;;</span>
+        try {
+<span class="nc" id="L39">            con = cn.getConnection();</span>
+<span class="nc" id="L40">            ps = con.prepareStatement(sql);</span>
+<span class="nc" id="L41">            rs = ps.executeQuery();</span>
+
+<span class="nc bnc" id="L43" title="All 2 branches missed.">            while (rs.next()) {</span>
+<span class="nc" id="L44">                Repuesto rep = new Repuesto();</span>
+<span class="nc" id="L45">                rep.setIdrepuesto(Integer.parseInt(rs.getString(&quot;idrepuesto&quot;)));</span>
+<span class="nc" id="L46">                rep.setFkidalmacen(Integer.parseInt(rs.getString(&quot;fkidalmacen&quot;)));</span>
+<span class="nc" id="L47">                rep.setFkidestado(Integer.parseInt(rs.getString(&quot;fkidestado&quot;)));</span>
+<span class="nc" id="L48">                rep.setNombre(rs.getString(&quot;nombre&quot;));</span>
+<span class="nc" id="L49">                rep.setFkidcategoria(Integer.parseInt(rs.getString(&quot;fkidcategoria&quot;)));</span>
+<span class="nc" id="L50">                rep.setImagen(rs.getString(&quot;imagen&quot;));</span>
+<span class="nc" id="L51">                rep.setPreciounitario(Double.parseDouble(rs.getString(&quot;preciounitario&quot;)));</span>
+<span class="nc" id="L52">                rep.setCantidad(Integer.parseInt(rs.getString(&quot;Cantidad&quot;)));</span>
+<span class="nc" id="L53">                list.add(rep);</span>
+<span class="nc" id="L54">            }</span>
+<span class="nc" id="L55">        } catch (SQLException e) {</span>
+<span class="nc" id="L56">            logger.log(Level.WARNING, e.toString());</span>
+<span class="nc" id="L57">        }</span>
+<span class="nc" id="L58">        return list;</span>
+    }
+
+    @Override
+    public Repuesto list(int id) {
+
+<span class="nc" id="L64">        String sql = &quot;select * from tbrepuesto where idrepuesto= ?&quot;;</span>
+<span class="nc" id="L65">        Repuesto rep = new Repuesto();</span>
+        try {
+<span class="nc" id="L67">            con = cn.getConnection();</span>
+<span class="nc" id="L68">            ps = con.prepareStatement(sql);</span>
+<span class="nc" id="L69">            ps.setInt(1, id);</span>
+
+<span class="nc" id="L71">            rs = ps.executeQuery();</span>
+
+<span class="nc bnc" id="L73" title="All 2 branches missed.">            while (rs.next()) {</span>
+
+<span class="nc" id="L75">                rep.setIdrepuesto(Integer.parseInt(rs.getString(&quot;idrepuesto&quot;)));</span>
+<span class="nc" id="L76">                rep.setFkidalmacen(Integer.parseInt(rs.getString(&quot;fkidalmacen&quot;)));</span>
+<span class="nc" id="L77">                rep.setFkidestado(Integer.parseInt(rs.getString(&quot;fkidestado&quot;)));</span>
+<span class="nc" id="L78">                rep.setNombre(rs.getString(&quot;nombre&quot;));</span>
+<span class="nc" id="L79">                rep.setFkidcategoria(Integer.parseInt(rs.getString(&quot;fkidcategoria&quot;)));</span>
+<span class="nc" id="L80">                rep.setImagen(rs.getString(&quot;imagen&quot;));</span>
+<span class="nc" id="L81">                rep.setPreciounitario(Double.parseDouble(rs.getString(&quot;preciounitario&quot;)));</span>
+<span class="nc" id="L82">                rep.setCantidad(Integer.parseInt(rs.getString(&quot;cantidad&quot;)));</span>
+            }
+
+<span class="nc" id="L85">        } catch (SQLException e) {</span>
+<span class="nc" id="L86">            logger.log(Level.WARNING, e.toString());</span>
+<span class="nc" id="L87">            return null;</span>
+<span class="nc" id="L88">        }</span>
+<span class="nc" id="L89">        return rep;</span>
+
+    }
+
+    @Override
+    public boolean add(Repuesto rep) {
+
+<span class="fc" id="L96">        String sql = &quot;insert into tbrepuesto values( ? , ? , ? , ? , ? , ? , ? , ? )&quot;;</span>
+        try {
+<span class="fc" id="L98">            con = cn.getConnection();</span>
+<span class="fc" id="L99">            ps = con.prepareStatement(sql);</span>
+
+<span class="fc" id="L101">            ps.setInt(1, rep.getIdrepuesto());</span>
+<span class="fc" id="L102">            ps.setInt(2, rep.getFkidalmacen());</span>
+<span class="fc" id="L103">            ps.setInt(3, rep.getFkidestado());</span>
+<span class="fc" id="L104">            ps.setString(4, rep.getNombre());</span>
+<span class="fc" id="L105">            ps.setInt(5, rep.getFkidcategoria());</span>
+<span class="fc" id="L106">            ps.setString(6, rep.getImagen());</span>
+<span class="fc" id="L107">            ps.setDouble(7, rep.getPreciounitario());</span>
+<span class="fc" id="L108">            ps.setInt(8, rep.getCantidad());</span>
+            
+
+<span class="nc" id="L111">            ps.executeUpdate();</span>
+
+<span class="fc" id="L113">        } catch (SQLException ex) {</span>
+<span class="fc" id="L114">            logger.log(Level.WARNING, ex.toString());</span>
+<span class="nc" id="L115">        }</span>
+
+<span class="fc" id="L117">        return true;</span>
+    }
+
+    @Override
+    public boolean edit(Repuesto rep) {
+
+<span class="fc" id="L123">        String sql = &quot;update tbrepuesto set Cantidad=?, fkidalmacen=?, fkidestado= ?,nombre=?,fkidcategoria=?,imagen=?, preciounitario=? where idrepuesto=?&quot;;</span>
+
+        try {
+<span class="fc" id="L126">            con = cn.getConnection();</span>
+            
+<span class="fc" id="L128">            ps = con.prepareStatement(sql);</span>
+            
+<span class="fc" id="L130">            ps.setInt(1, rep.getCantidad());</span>
+<span class="fc" id="L131">            ps.setInt(2, rep.getFkidalmacen());</span>
+<span class="fc" id="L132">            ps.setInt(3, rep.getFkidestado());</span>
+<span class="fc" id="L133">            ps.setString(4, rep.getNombre());</span>
+<span class="fc" id="L134">            ps.setInt(5, rep.getFkidcategoria());</span>
+<span class="fc" id="L135">            ps.setString(6, rep.getImagen());</span>
+<span class="fc" id="L136">            ps.setDouble(7, rep.getPreciounitario());</span>
+<span class="fc" id="L137">            ps.setInt(8, rep.getIdrepuesto());</span>
+            
+<span class="nc" id="L139">            ps.executeUpdate();</span>
+            
+
+<span class="fc" id="L142">        } catch (SQLException e) {</span>
+<span class="fc" id="L143">            logger.log(Level.WARNING, e.toString());</span>
+<span class="fc" id="L144">            return false;</span>
+<span class="nc" id="L145">        }</span>
+<span class="nc" id="L146">        return true;</span>
+
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
