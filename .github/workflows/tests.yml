@@ -19,12 +19,7 @@ jobs:
           distribution: 'temurin'
       - name: Build with Maven
         run: mvn -f HACLaditec/pom.xml test
-      - name: Generate Allure Report
-        run: mvn allure:report -Dallure.results.directory=target/allure-results
-      - name: Publish Allure Report
-        uses: actions/upload-artifact@v2
-        with:
-          name: allure-report
+
           path: target/site/allure-maven-plugin
 
 
