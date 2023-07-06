@@ -17,11 +17,17 @@ jobs:
         with:
           java-version: '18'
           distribution: 'temurin'
+      - name: Install Allure
+        run: |
+          sudo apt-add-repository ppa:qameta/allure -y
+          sudo apt-get update -y
+          sudo apt-get install allure -y
       - name: Build with Maven
         run: mvn -f HACLaditec/pom.xml test
       - name: Generate Allure Report
         run: allure generate --clean && allure open
         working-directory: HACLaditec/target/surefire-reports
+
 
 
       
