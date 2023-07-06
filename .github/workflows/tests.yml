@@ -17,12 +17,13 @@ jobs:
         with:
           java-version: '18'
           distribution: 'temurin'
-      - name: Install Allure
+      - name: Install Allure Command Line
         run: |
-          sudo apt-add-repository ppa:qameta/allure -y
-          sudo apt-get update -y
-          sudo apt-get install allure -y
-      - name: Build with Maven
+          wget https://github.com/allure-framework/allure2/releases/download/2.10.0/allure-2.10.0.zip
+          unzip allure-2.10.0.zip -d allure
+          sudo mv allure /usr/local
+          sudo ln -s /usr/local/allure/bin/allure /usr/bin/allure
+      - name: Build and Run Tests
         run: mvn -f HACLaditec/pom.xml test
       - name: Generate Allure Report
         run: allure generate --clean && allure open
