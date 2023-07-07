@@ -1,0 +1,193 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "Erick",
+    "children" : [ {
+      "name" : "17320@Erick.main(1)",
+      "children" : [ {
+        "name" : "Editar pedido",
+        "uid" : "cca9a03173fd3616",
+        "parentUid" : "c9f1c2f6257a3e43959ceb2d34fdb204",
+        "status" : "passed",
+        "time" : {
+          "start" : 1688683245310,
+          "stop" : 1688683245318,
+          "duration" : 8
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Agregar un nuevo repuesto",
+        "uid" : "a94f1e54dcbf336b",
+        "parentUid" : "c9f1c2f6257a3e43959ceb2d34fdb204",
+        "status" : "passed",
+        "time" : {
+          "start" : 1688683245545,
+          "stop" : 1688683245554,
+          "duration" : 9
+        },
+        "flaky" : false,
+        "parameters" : [ "1", "17", "2", "1", "13", "png", "válvula Para Inyector Mitsubishi L200 4d56 4m41", "100" ]
+      }, {
+        "name" : "Listar usuario",
+        "uid" : "b38f79350320b74c",
+        "parentUid" : "c9f1c2f6257a3e43959ceb2d34fdb204",
+        "status" : "passed",
+        "time" : {
+          "start" : 1688683245699,
+          "stop" : 1688683245745,
+          "duration" : 46
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Agregar un nuevo repuesto",
+        "uid" : "85cc7b67cf28d1df",
+        "parentUid" : "c9f1c2f6257a3e43959ceb2d34fdb204",
+        "status" : "passed",
+        "time" : {
+          "start" : 1688683245526,
+          "stop" : 1688683245537,
+          "duration" : 11
+        },
+        "flaky" : false,
+        "parameters" : [ "1", "15", "1", "1", "12", "png", "TEX-11-103 / BOBINA NISSAN VERSA X-TRAIL", "70" ]
+      }, {
+        "name" : "Agregar pedido",
+        "uid" : "ec15e393666a0d",
+        "parentUid" : "c9f1c2f6257a3e43959ceb2d34fdb204",
+        "status" : "passed",
+        "time" : {
+          "start" : 1688683245080,
+          "stop" : 1688683245131,
+          "duration" : 51
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Editar un repuesto existente",
+        "uid" : "145a2244ad5c1a57",
+        "parentUid" : "c9f1c2f6257a3e43959ceb2d34fdb204",
+        "status" : "passed",
+        "time" : {
+          "start" : 1688683245561,
+          "stop" : 1688683245571,
+          "duration" : 10
+        },
+        "flaky" : false,
+        "parameters" : [ "1", "9", "1", "1", "1", "png", "válvula Inyector Mitsubishi L200 updated", "180" ]
+      }, {
+        "name" : "Listar los repuestos",
+        "uid" : "ee9b564bf57242fa",
+        "parentUid" : "c9f1c2f6257a3e43959ceb2d34fdb204",
+        "status" : "passed",
+        "time" : {
+          "start" : 1688683245413,
+          "stop" : 1688683245439,
+          "duration" : 26
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Ver pedidos de una boleta",
+        "uid" : "357b488cad314df3",
+        "parentUid" : "c9f1c2f6257a3e43959ceb2d34fdb204",
+        "status" : "passed",
+        "time" : {
+          "start" : 1688683245292,
+          "stop" : 1688683245300,
+          "duration" : 8
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Agregar usuario",
+        "uid" : "da94801592f7283",
+        "parentUid" : "c9f1c2f6257a3e43959ceb2d34fdb204",
+        "status" : "passed",
+        "time" : {
+          "start" : 1688683245627,
+          "stop" : 1688683245690,
+          "duration" : 63
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Obtener un repuesto específico",
+        "uid" : "fe48717061d8d01f",
+        "parentUid" : "c9f1c2f6257a3e43959ceb2d34fdb204",
+        "status" : "passed",
+        "time" : {
+          "start" : 1688683245448,
+          "stop" : 1688683245458,
+          "duration" : 10
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Agregar un nuevo repuesto",
+        "uid" : "8a291585653e32ae",
+        "parentUid" : "c9f1c2f6257a3e43959ceb2d34fdb204",
+        "status" : "passed",
+        "time" : {
+          "start" : 1688683245509,
+          "stop" : 1688683245518,
+          "duration" : 9
+        },
+        "flaky" : false,
+        "parameters" : [ "1", "16", "2", "1", "11", "png", "Bobina Byd F3 - Mitsubishi", "150" ]
+      }, {
+        "name" : "Listar pedidos",
+        "uid" : "728fdad4b124b407",
+        "parentUid" : "c9f1c2f6257a3e43959ceb2d34fdb204",
+        "status" : "passed",
+        "time" : {
+          "start" : 1688683245148,
+          "stop" : 1688683245276,
+          "duration" : 128
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Inicio de sesión exitoso",
+        "uid" : "f7201451d280f119",
+        "parentUid" : "c9f1c2f6257a3e43959ceb2d34fdb204",
+        "status" : "passed",
+        "time" : {
+          "start" : 1688683244534,
+          "stop" : 1688683244809,
+          "duration" : 275
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "Agregar un nuevo repuesto",
+        "uid" : "c56aec39c11c987b",
+        "parentUid" : "c9f1c2f6257a3e43959ceb2d34fdb204",
+        "status" : "passed",
+        "time" : {
+          "start" : 1688683245469,
+          "stop" : 1688683245501,
+          "duration" : 32
+        },
+        "flaky" : false,
+        "parameters" : [ "1", "9", "1", "1", "10", "png", "Juego de 4 piezas de inyectores - Nissan", "180" ]
+      }, {
+        "name" : "Editar usuario",
+        "uid" : "8833c5b31c39909b",
+        "parentUid" : "c9f1c2f6257a3e43959ceb2d34fdb204",
+        "status" : "passed",
+        "time" : {
+          "start" : 1688683245753,
+          "stop" : 1688683245764,
+          "duration" : 11
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "c9f1c2f6257a3e43959ceb2d34fdb204"
+    } ],
+    "uid" : "974b3cd32501ca118a0b5639a658d028"
+  } ]
+}

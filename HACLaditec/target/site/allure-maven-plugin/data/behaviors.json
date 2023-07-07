@@ -1,0 +1,249 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "name" : "behaviors",
+  "children" : [ {
+    "name" : "Inicio de sesion",
+    "children" : [ {
+      "name" : "Inicio de sesión exitoso",
+      "children" : [ {
+        "name" : "Inicio de sesión exitoso",
+        "uid" : "f7201451d280f119",
+        "parentUid" : "66561089a81e7277dd61ed4c15a0d05a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1688683244534,
+          "stop" : 1688683244809,
+          "duration" : 275
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "66561089a81e7277dd61ed4c15a0d05a"
+    } ],
+    "uid" : "8bc192849dcac9d5bc82b3b2534e35d2"
+  }, {
+    "name" : "Manejo de pedidos de venta",
+    "children" : [ {
+      "name" : "Agregar pedido",
+      "children" : [ {
+        "name" : "Agregar pedido",
+        "uid" : "ec15e393666a0d",
+        "parentUid" : "bc722a81059044cd62b1a68ab4f36cc6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1688683245080,
+          "stop" : 1688683245131,
+          "duration" : 51
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "bc722a81059044cd62b1a68ab4f36cc6"
+    }, {
+      "name" : "Listar pedidos",
+      "children" : [ {
+        "name" : "Listar pedidos",
+        "uid" : "728fdad4b124b407",
+        "parentUid" : "a461280fb32ec5ea0e97a25270adf127",
+        "status" : "passed",
+        "time" : {
+          "start" : 1688683245148,
+          "stop" : 1688683245276,
+          "duration" : 128
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "a461280fb32ec5ea0e97a25270adf127"
+    }, {
+      "name" : "Ver pedidos de una boleta",
+      "children" : [ {
+        "name" : "Ver pedidos de una boleta",
+        "uid" : "357b488cad314df3",
+        "parentUid" : "2aee2ac66d81fc451225feb5e8bf1594",
+        "status" : "passed",
+        "time" : {
+          "start" : 1688683245292,
+          "stop" : 1688683245300,
+          "duration" : 8
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "2aee2ac66d81fc451225feb5e8bf1594"
+    }, {
+      "name" : "Editar pedido",
+      "children" : [ {
+        "name" : "Editar pedido",
+        "uid" : "cca9a03173fd3616",
+        "parentUid" : "cae8bbb3cbe0a511c7c3e5d5add95d64",
+        "status" : "passed",
+        "time" : {
+          "start" : 1688683245310,
+          "stop" : 1688683245318,
+          "duration" : 8
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "cae8bbb3cbe0a511c7c3e5d5add95d64"
+    } ],
+    "uid" : "f20bce174aee655c4a1366f3206c5570"
+  }, {
+    "name" : "Operaciones con Repuestos",
+    "children" : [ {
+      "name" : "Listar los repuestos",
+      "children" : [ {
+        "name" : "Listar los repuestos",
+        "uid" : "ee9b564bf57242fa",
+        "parentUid" : "004042b701aede8bfd23296edb4760f3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1688683245413,
+          "stop" : 1688683245439,
+          "duration" : 26
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "004042b701aede8bfd23296edb4760f3"
+    }, {
+      "name" : "Obtener un repuesto específico",
+      "children" : [ {
+        "name" : "Obtener un repuesto específico",
+        "uid" : "fe48717061d8d01f",
+        "parentUid" : "c5c827c7455be6b2d1786cf03f740806",
+        "status" : "passed",
+        "time" : {
+          "start" : 1688683245448,
+          "stop" : 1688683245458,
+          "duration" : 10
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "c5c827c7455be6b2d1786cf03f740806"
+    }, {
+      "name" : "Agregar un nuevo repuesto",
+      "children" : [ {
+        "name" : "Agregar un nuevo repuesto",
+        "uid" : "c56aec39c11c987b",
+        "parentUid" : "5c9120588116b7c8143bacb520eaa95f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1688683245469,
+          "stop" : 1688683245501,
+          "duration" : 32
+        },
+        "flaky" : false,
+        "parameters" : [ "1", "9", "1", "1", "10", "png", "Juego de 4 piezas de inyectores - Nissan", "180" ]
+      }, {
+        "name" : "Agregar un nuevo repuesto",
+        "uid" : "8a291585653e32ae",
+        "parentUid" : "5c9120588116b7c8143bacb520eaa95f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1688683245509,
+          "stop" : 1688683245518,
+          "duration" : 9
+        },
+        "flaky" : false,
+        "parameters" : [ "1", "16", "2", "1", "11", "png", "Bobina Byd F3 - Mitsubishi", "150" ]
+      }, {
+        "name" : "Agregar un nuevo repuesto",
+        "uid" : "85cc7b67cf28d1df",
+        "parentUid" : "5c9120588116b7c8143bacb520eaa95f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1688683245526,
+          "stop" : 1688683245537,
+          "duration" : 11
+        },
+        "flaky" : false,
+        "parameters" : [ "1", "15", "1", "1", "12", "png", "TEX-11-103 / BOBINA NISSAN VERSA X-TRAIL", "70" ]
+      }, {
+        "name" : "Agregar un nuevo repuesto",
+        "uid" : "a94f1e54dcbf336b",
+        "parentUid" : "5c9120588116b7c8143bacb520eaa95f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1688683245545,
+          "stop" : 1688683245554,
+          "duration" : 9
+        },
+        "flaky" : false,
+        "parameters" : [ "1", "17", "2", "1", "13", "png", "válvula Para Inyector Mitsubishi L200 4d56 4m41", "100" ]
+      } ],
+      "uid" : "5c9120588116b7c8143bacb520eaa95f"
+    }, {
+      "name" : "Editar un repuesto existente",
+      "children" : [ {
+        "name" : "Editar un repuesto existente",
+        "uid" : "145a2244ad5c1a57",
+        "parentUid" : "a9bcf6aac75145a32ee73da7421e68c9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1688683245561,
+          "stop" : 1688683245571,
+          "duration" : 10
+        },
+        "flaky" : false,
+        "parameters" : [ "1", "9", "1", "1", "1", "png", "válvula Inyector Mitsubishi L200 updated", "180" ]
+      } ],
+      "uid" : "a9bcf6aac75145a32ee73da7421e68c9"
+    } ],
+    "uid" : "da95a6598d25017f9d72f53727105417"
+  }, {
+    "name" : "Manejo de usuarios",
+    "children" : [ {
+      "name" : "Agregar usuario",
+      "children" : [ {
+        "name" : "Agregar usuario",
+        "uid" : "da94801592f7283",
+        "parentUid" : "4277f44f1b165765e0822a9222794e33",
+        "status" : "passed",
+        "time" : {
+          "start" : 1688683245627,
+          "stop" : 1688683245690,
+          "duration" : 63
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "4277f44f1b165765e0822a9222794e33"
+    }, {
+      "name" : "Listar usuario",
+      "children" : [ {
+        "name" : "Listar usuario",
+        "uid" : "b38f79350320b74c",
+        "parentUid" : "4f1d5efb975d3ccb8901666c8544d213",
+        "status" : "passed",
+        "time" : {
+          "start" : 1688683245699,
+          "stop" : 1688683245745,
+          "duration" : 46
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "4f1d5efb975d3ccb8901666c8544d213"
+    }, {
+      "name" : "Editar usuario",
+      "children" : [ {
+        "name" : "Editar usuario",
+        "uid" : "8833c5b31c39909b",
+        "parentUid" : "086be1dc2484f8110872582879dcd54a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1688683245753,
+          "stop" : 1688683245764,
+          "duration" : 11
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "086be1dc2484f8110872582879dcd54a"
+    } ],
+    "uid" : "a3efffd806fa3e014f2128596f21d656"
+  } ]
+}

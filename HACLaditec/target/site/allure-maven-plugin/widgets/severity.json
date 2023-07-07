@@ -1,0 +1,151 @@
+[ {
+  "uid" : "fe48717061d8d01f",
+  "name" : "Obtener un repuesto específico",
+  "time" : {
+    "start" : 1688683245448,
+    "stop" : 1688683245458,
+    "duration" : 10
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "85cc7b67cf28d1df",
+  "name" : "Agregar un nuevo repuesto",
+  "time" : {
+    "start" : 1688683245526,
+    "stop" : 1688683245537,
+    "duration" : 11
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "728fdad4b124b407",
+  "name" : "Listar pedidos",
+  "time" : {
+    "start" : 1688683245148,
+    "stop" : 1688683245276,
+    "duration" : 128
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "da94801592f7283",
+  "name" : "Agregar usuario",
+  "time" : {
+    "start" : 1688683245627,
+    "stop" : 1688683245690,
+    "duration" : 63
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "cca9a03173fd3616",
+  "name" : "Editar pedido",
+  "time" : {
+    "start" : 1688683245310,
+    "stop" : 1688683245318,
+    "duration" : 8
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "ec15e393666a0d",
+  "name" : "Agregar pedido",
+  "time" : {
+    "start" : 1688683245080,
+    "stop" : 1688683245131,
+    "duration" : 51
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "145a2244ad5c1a57",
+  "name" : "Editar un repuesto existente",
+  "time" : {
+    "start" : 1688683245561,
+    "stop" : 1688683245571,
+    "duration" : 10
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "ee9b564bf57242fa",
+  "name" : "Listar los repuestos",
+  "time" : {
+    "start" : 1688683245413,
+    "stop" : 1688683245439,
+    "duration" : 26
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "8833c5b31c39909b",
+  "name" : "Editar usuario",
+  "time" : {
+    "start" : 1688683245753,
+    "stop" : 1688683245764,
+    "duration" : 11
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "a94f1e54dcbf336b",
+  "name" : "Agregar un nuevo repuesto",
+  "time" : {
+    "start" : 1688683245545,
+    "stop" : 1688683245554,
+    "duration" : 9
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "b38f79350320b74c",
+  "name" : "Listar usuario",
+  "time" : {
+    "start" : 1688683245699,
+    "stop" : 1688683245745,
+    "duration" : 46
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "c56aec39c11c987b",
+  "name" : "Agregar un nuevo repuesto",
+  "time" : {
+    "start" : 1688683245469,
+    "stop" : 1688683245501,
+    "duration" : 32
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "8a291585653e32ae",
+  "name" : "Agregar un nuevo repuesto",
+  "time" : {
+    "start" : 1688683245509,
+    "stop" : 1688683245518,
+    "duration" : 9
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "357b488cad314df3",
+  "name" : "Ver pedidos de una boleta",
+  "time" : {
+    "start" : 1688683245292,
+    "stop" : 1688683245300,
+    "duration" : 8
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "f7201451d280f119",
+  "name" : "Inicio de sesión exitoso",
+  "time" : {
+    "start" : 1688683244534,
+    "stop" : 1688683244809,
+    "duration" : 275
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]
