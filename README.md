@@ -10,6 +10,8 @@ Integrantes:
 - Aranda Reyes, Diego Andre (2019063855)
 - Mamani Lima, Erick Mauricio (2020066321)
 - Rivera Mendoza, Jhonny (2020067144)
+
+
 ### Resumen del Proyecto
 
 El proyecto se enfoca en reducir la deuda técnica y las vulnerabilidades del sistema intranet de LADITEC. Se utilizará SonarQube para identificar áreas problemáticas, se corregirán con un equipo de desarrolladores y se mantendrá la calidad del código. El objetivo es eliminar los problemas y mejorar el sistema de manera completa.
@@ -18,7 +20,12 @@ El proyecto se enfoca en reducir la deuda técnica y las vulnerabilidades del si
 # DIAGRAMA DE CLASES
 ![image](https://github.com/UPT-FAING-EPIS/proyecto_curso-laboratorio-automotriz-laditec/assets/102829461/3a46d862-e882-4c9b-a7ed-e52656804843)
 
-workflow:
+### Desplegar:
+Se ha trabajado con MAVEN por lo que se debe ejecutar en el directorio del proyecto:
+mvn clean install
+
+
+### workflow:
 
 name: Testing
 
@@ -55,8 +62,6 @@ jobs:
 
 ![Captura de pantalla 2023-07-07 131806](https://github.com/UPT-FAING-EPIS/proyecto_curso-laboratorio-automotriz-laditec/assets/102819429/53dd5d02-fd76-46d3-89fa-2a8cc6c1092d)
 
-Desplegar:
-en el directorio ejecutar:
-mvn clean install
+
 
 
