@@ -23,16 +23,18 @@ jobs:
         run: mvn -f HACLaditec/pom.xml jacoco:report
       - name: Generate Allure Report
         run: mvn -f HACLaditec/pom.xml allure:report
+      - name: Allure Report
+        uses: QuintilianoNery/action-allure-report-V2@0.2.0
+        with:
+          results-dir: HACLaditec/allure-results
+          report-dir: HACLaditec/target/site/allure-maven-plugin
       - name: Upload Allure Report
         uses: actions/upload-artifact@v2
         with:
           name: allure-report
           path: HACLaditec/target/site/allure-maven-plugin
-      - name: Allure report
-        uses: afiore/allure-generate
-        with:
-          results-dir: HACLaditec/allure-results
-          report-dir: HACLaditec/target/site/allure-maven-plugin
+
+
 
 
 
