@@ -28,17 +28,13 @@ jobs:
         with:
           name: allure-report
           path: HACLaditec/target/site/allure-maven-plugin
-
-
-      - name: Upload Allure Report
-        uses: actions/upload-artifact@v2
-        with:
-          name: allure-report
-          path: HACLaditec/target/site/allure-maven-plugin
       - name: Allure report
         uses: afiore/action-allure-report@e43ebd6f4f4c74b07b1eb02f042902bbe6786a19
         with:
-          results-dir: HACLaditec/allure-results
+          results-dir: HACLaditec/target/allure-results
+          report-dir: HACLaditec/target/allure-report
+
+
 
       
 
