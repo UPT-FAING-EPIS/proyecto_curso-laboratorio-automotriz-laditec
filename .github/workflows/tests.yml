@@ -29,10 +29,10 @@ jobs:
           name: allure-report
           path: HACLaditec/target/site/allure-maven-plugin
       - name: Allure report
-        uses: afiore/action-allure-report@e43ebd6f4f4c74b07b1eb02f042902bbe6786a19
+        uses: afiore/allure-generate
         with:
-          results-dir: HACLaditec/target/allure-results
-          report-dir: HACLaditec/target/allure-report
+          results-dir: HACLaditec/allure-results
+          report-dir: HACLaditec/target/site/allure-maven-plugin
 
 
 
