@@ -19,6 +19,7 @@ El proyecto se enfoca en reducir la deuda técnica y las vulnerabilidades del si
 ![image](https://github.com/UPT-FAING-EPIS/proyecto_curso-laboratorio-automotriz-laditec/assets/102829461/3a46d862-e882-4c9b-a7ed-e52656804843)
 
 workflow:
+
 name: Testing
 
 on:
@@ -53,4 +54,9 @@ jobs:
           path: HACLaditec/target/site/allure-maven-plugin/
 
 ![Captura de pantalla 2023-07-07 131806](https://github.com/UPT-FAING-EPIS/proyecto_curso-laboratorio-automotriz-laditec/assets/102819429/53dd5d02-fd76-46d3-89fa-2a8cc6c1092d)
+
+Desplegar:
+en el directorio ejecutar:
+mvn clean install
+
 
