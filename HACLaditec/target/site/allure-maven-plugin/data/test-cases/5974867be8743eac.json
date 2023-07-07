@@ -1,12 +1,12 @@
 {
-  "uid" : "ee9b564bf57242fa",
-  "name" : "Listar los repuestos",
-  "fullName" : "Operaciones con Repuestos: Listar los repuestos",
-  "historyId" : "8f25b6956beb17590661c684eee67f47",
+  "uid" : "5974867be8743eac",
+  "name" : "Agregar pedido",
+  "fullName" : "Manejo de pedidos de venta: Agregar pedido",
+  "historyId" : "c4590db361aba0fc8a8b2f66b0979d85",
   "time" : {
-    "start" : 1688683245413,
-    "stop" : 1688683245439,
-    "duration" : 26
+    "start" : 1688683245080,
+    "stop" : 1688683245131,
+    "duration" : 51
   },
   "status" : "passed",
   "flaky" : false,
@@ -14,55 +14,55 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "Given  se ha establecido una conexión con la base de datos",
+      "name" : "Given  un usuario con ID de usuario 1",
       "time" : {
-        "start" : 1688683245419,
-        "stop" : 1688683245430,
-        "duration" : 11
+        "start" : 1688683245084,
+        "stop" : 1688683245090,
+        "duration" : 6
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "stepsCount" : 0,
       "hasContent" : false,
+      "stepsCount" : 0,
       "shouldDisplayMessage" : false,
       "attachmentsCount" : 0
     }, {
-      "name" : "When  obtengo la lista de repuestos",
+      "name" : "When  se agrega un pedido con idusuario 1, fecha \"2023-06-13\" y estado \"A\"",
       "time" : {
-        "start" : 1688683245430,
-        "stop" : 1688683245438,
-        "duration" : 8
+        "start" : 1688683245091,
+        "stop" : 1688683245130,
+        "duration" : 39
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "stepsCount" : 0,
       "hasContent" : false,
+      "stepsCount" : 0,
       "shouldDisplayMessage" : false,
       "attachmentsCount" : 0
     }, {
-      "name" : "Then  debería recibir una lista de repuestos válida",
+      "name" : "Then  el pedido se agrega correctamente",
       "time" : {
-        "start" : 1688683245439,
-        "stop" : 1688683245439,
-        "duration" : 0
+        "start" : 1688683245130,
+        "stop" : 1688683245131,
+        "duration" : 1
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "stepsCount" : 0,
       "hasContent" : false,
+      "stepsCount" : 0,
       "shouldDisplayMessage" : false,
       "attachmentsCount" : 0
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "stepsCount" : 3,
     "hasContent" : true,
+    "stepsCount" : 3,
     "shouldDisplayMessage" : false,
     "attachmentsCount" : 0
   },
@@ -75,16 +75,16 @@
     "value" : "17320@Erick.main(1)"
   }, {
     "name" : "feature",
-    "value" : "Operaciones con Repuestos"
+    "value" : "Manejo de pedidos de venta"
   }, {
     "name" : "story",
-    "value" : "Listar los repuestos"
+    "value" : "Agregar pedido"
   }, {
     "name" : "suite",
-    "value" : "Operaciones con Repuestos"
+    "value" : "Manejo de pedidos de venta"
   }, {
     "name" : "testClass",
-    "value" : "Listar los repuestos"
+    "value" : "Agregar pedido"
   }, {
     "name" : "framework",
     "value" : "cucumber4jvm"
@@ -93,10 +93,10 @@
     "value" : "java"
   }, {
     "name" : "gherkin_uri",
-    "value" : "file:///C:/Users/LENOVO/Pictures/COLDIAD/proyecto_curso-laboratorio-automotriz-laditec/HACLaditec/src/test/java/features/producto.feature"
+    "value" : "file:///C:/Users/LENOVO/Pictures/COLDIAD/proyecto_curso-laboratorio-automotriz-laditec/HACLaditec/src/test/java/features/pedido.feature"
   }, {
     "name" : "package",
-    "value" : "src.test.java.features.producto_feature.Operaciones con Repuestos"
+    "value" : "src.test.java.features.pedido_feature.Manejo de pedidos de venta"
   }, {
     "name" : "resultFormat",
     "value" : "allure2"
@@ -111,6 +111,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "ee9b564bf57242fa.json",
+  "source" : "5974867be8743eac.json",
   "parameterValues" : [ ]
 }

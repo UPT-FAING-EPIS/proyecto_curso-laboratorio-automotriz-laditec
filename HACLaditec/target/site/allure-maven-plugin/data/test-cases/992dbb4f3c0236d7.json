@@ -1,5 +1,5 @@
 {
-  "uid" : "a94f1e54dcbf336b",
+  "uid" : "992dbb4f3c0236d7",
   "name" : "Agregar un nuevo repuesto",
   "fullName" : "Operaciones con Repuestos: Agregar un nuevo repuesto",
   "historyId" : "8c7de93df6080ae7e7dc438a83ebbf6e",
@@ -24,8 +24,8 @@
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "stepsCount" : 0,
       "hasContent" : false,
+      "stepsCount" : 0,
       "shouldDisplayMessage" : false,
       "attachmentsCount" : 0
     }, {
@@ -39,8 +39,8 @@
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "stepsCount" : 0,
       "hasContent" : false,
+      "stepsCount" : 0,
       "shouldDisplayMessage" : false,
       "attachmentsCount" : 0
     }, {
@@ -54,15 +54,15 @@
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "stepsCount" : 0,
       "hasContent" : false,
+      "stepsCount" : 0,
       "shouldDisplayMessage" : false,
       "attachmentsCount" : 0
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "stepsCount" : 3,
     "hasContent" : true,
+    "stepsCount" : 3,
     "shouldDisplayMessage" : false,
     "attachmentsCount" : 0
   },
@@ -135,6 +135,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "a94f1e54dcbf336b.json",
+  "source" : "992dbb4f3c0236d7.json",
   "parameterValues" : [ "1", "17", "2", "1", "13", "png", "válvula Para Inyector Mitsubishi L200 4d56 4m41", "100" ]
 }

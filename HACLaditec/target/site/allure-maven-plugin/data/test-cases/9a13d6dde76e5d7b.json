@@ -1,5 +1,5 @@
 {
-  "uid" : "145a2244ad5c1a57",
+  "uid" : "9a13d6dde76e5d7b",
   "name" : "Editar un repuesto existente",
   "fullName" : "Operaciones con Repuestos: Editar un repuesto existente",
   "historyId" : "5576f2c88d1d44c58320f7ee7e529ff6",
@@ -24,8 +24,8 @@
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "stepsCount" : 0,
       "hasContent" : false,
+      "stepsCount" : 0,
       "shouldDisplayMessage" : false,
       "attachmentsCount" : 0
     }, {
@@ -39,8 +39,8 @@
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "stepsCount" : 0,
       "hasContent" : false,
+      "stepsCount" : 0,
       "shouldDisplayMessage" : false,
       "attachmentsCount" : 0
     }, {
@@ -54,15 +54,15 @@
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "stepsCount" : 0,
       "hasContent" : false,
+      "stepsCount" : 0,
       "shouldDisplayMessage" : false,
       "attachmentsCount" : 0
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "stepsCount" : 3,
     "hasContent" : true,
+    "stepsCount" : 3,
     "shouldDisplayMessage" : false,
     "attachmentsCount" : 0
   },
@@ -135,6 +135,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "145a2244ad5c1a57.json",
+  "source" : "9a13d6dde76e5d7b.json",
   "parameterValues" : [ "1", "9", "1", "1", "1", "png", "válvula Inyector Mitsubishi L200 updated", "180" ]
 }

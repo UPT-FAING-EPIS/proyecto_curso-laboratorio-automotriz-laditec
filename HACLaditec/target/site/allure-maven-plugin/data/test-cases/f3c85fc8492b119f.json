@@ -1,12 +1,12 @@
 {
-  "uid" : "da94801592f7283",
-  "name" : "Agregar usuario",
-  "fullName" : "Manejo de usuarios: Agregar usuario",
-  "historyId" : "7b8bb636402b872bff7882a8551ed173",
+  "uid" : "f3c85fc8492b119f",
+  "name" : "Listar pedidos",
+  "fullName" : "Manejo de pedidos de venta: Listar pedidos",
+  "historyId" : "480268532eff7d1b5d70520d1fbe43ed",
   "time" : {
-    "start" : 1688683245627,
-    "stop" : 1688683245690,
-    "duration" : 63
+    "start" : 1688683245148,
+    "stop" : 1688683245276,
+    "duration" : 128
   },
   "status" : "passed",
   "flaky" : false,
@@ -14,55 +14,55 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "Given  un usuario con idusuario 23",
+      "name" : "Given  se ha agregado un pedido",
       "time" : {
-        "start" : 1688683245629,
-        "stop" : 1688683245638,
-        "duration" : 9
+        "start" : 1688683245148,
+        "stop" : 1688683245214,
+        "duration" : 66
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "stepsCount" : 0,
       "hasContent" : false,
+      "stepsCount" : 0,
       "shouldDisplayMessage" : false,
       "attachmentsCount" : 0
     }, {
-      "name" : "When  se agrega un usuario con idusuario 23",
+      "name" : "When  se lista los pedidos",
       "time" : {
-        "start" : 1688683245639,
-        "stop" : 1688683245689,
-        "duration" : 50
+        "start" : 1688683245216,
+        "stop" : 1688683245274,
+        "duration" : 58
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "stepsCount" : 0,
       "hasContent" : false,
+      "stepsCount" : 0,
       "shouldDisplayMessage" : false,
       "attachmentsCount" : 0
     }, {
-      "name" : "Then  debo ver un mensaje de exito que indica que el usuario ha sido creado",
+      "name" : "Then  se muestra la lista de pedidos",
       "time" : {
-        "start" : 1688683245689,
-        "stop" : 1688683245690,
-        "duration" : 1
+        "start" : 1688683245275,
+        "stop" : 1688683245275,
+        "duration" : 0
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "stepsCount" : 0,
       "hasContent" : false,
+      "stepsCount" : 0,
       "shouldDisplayMessage" : false,
       "attachmentsCount" : 0
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "stepsCount" : 3,
     "hasContent" : true,
+    "stepsCount" : 3,
     "shouldDisplayMessage" : false,
     "attachmentsCount" : 0
   },
@@ -75,16 +75,16 @@
     "value" : "17320@Erick.main(1)"
   }, {
     "name" : "feature",
-    "value" : "Manejo de usuarios"
+    "value" : "Manejo de pedidos de venta"
   }, {
     "name" : "story",
-    "value" : "Agregar usuario"
+    "value" : "Listar pedidos"
   }, {
     "name" : "suite",
-    "value" : "Manejo de usuarios"
+    "value" : "Manejo de pedidos de venta"
   }, {
     "name" : "testClass",
-    "value" : "Agregar usuario"
+    "value" : "Listar pedidos"
   }, {
     "name" : "framework",
     "value" : "cucumber4jvm"
@@ -93,10 +93,10 @@
     "value" : "java"
   }, {
     "name" : "gherkin_uri",
-    "value" : "file:///C:/Users/LENOVO/Pictures/COLDIAD/proyecto_curso-laboratorio-automotriz-laditec/HACLaditec/src/test/java/features/usuario.feature"
+    "value" : "file:///C:/Users/LENOVO/Pictures/COLDIAD/proyecto_curso-laboratorio-automotriz-laditec/HACLaditec/src/test/java/features/pedido.feature"
   }, {
     "name" : "package",
-    "value" : "src.test.java.features.usuario_feature.Manejo de usuarios"
+    "value" : "src.test.java.features.pedido_feature.Manejo de pedidos de venta"
   }, {
     "name" : "resultFormat",
     "value" : "allure2"
@@ -111,6 +111,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "da94801592f7283.json",
+  "source" : "f3c85fc8492b119f.json",
   "parameterValues" : [ ]
 }

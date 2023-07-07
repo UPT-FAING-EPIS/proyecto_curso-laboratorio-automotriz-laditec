@@ -1,12 +1,12 @@
 {
-  "uid" : "cca9a03173fd3616",
-  "name" : "Editar pedido",
-  "fullName" : "Manejo de pedidos de venta: Editar pedido",
-  "historyId" : "f35d58d965d8b99a967a9c6d31c0e84e",
+  "uid" : "a742bbef61657254",
+  "name" : "Inicio de sesión exitoso",
+  "fullName" : "Inicio de sesion: Inicio de sesión exitoso",
+  "historyId" : "40cadfd1fc7b7398f87f087125838c56",
   "time" : {
-    "start" : 1688683245310,
-    "stop" : 1688683245318,
-    "duration" : 8
+    "start" : 1688683244534,
+    "stop" : 1688683244809,
+    "duration" : 275
   },
   "status" : "passed",
   "flaky" : false,
@@ -14,55 +14,55 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "Given  un usuario con ID de usuario 1",
+      "name" : "Given  Soy un usuario registrado en el sistema",
       "time" : {
-        "start" : 1688683245311,
-        "stop" : 1688683245314,
+        "start" : 1688683244555,
+        "stop" : 1688683244761,
+        "duration" : 206
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
+    }, {
+      "name" : "When  ingreso con mis credenciales de inicio de sesion validas \"diego12@gmail.com\" y \"123\"",
+      "time" : {
+        "start" : 1688683244774,
+        "stop" : 1688683244804,
+        "duration" : 30
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
+    }, {
+      "name" : "Then  se inicia sesión exitosamente",
+      "time" : {
+        "start" : 1688683244804,
+        "stop" : 1688683244807,
         "duration" : 3
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "stepsCount" : 0,
       "hasContent" : false,
-      "shouldDisplayMessage" : false,
-      "attachmentsCount" : 0
-    }, {
-      "name" : "When  se edita el pedido con ID de pedido 1, nueva fecha \"2023-06-14\" y nuevo estado \"P\"",
-      "time" : {
-        "start" : 1688683245315,
-        "stop" : 1688683245316,
-        "duration" : 1
-      },
-      "status" : "passed",
-      "steps" : [ ],
-      "attachments" : [ ],
-      "parameters" : [ ],
       "stepsCount" : 0,
-      "hasContent" : false,
-      "shouldDisplayMessage" : false,
-      "attachmentsCount" : 0
-    }, {
-      "name" : "Then  el pedido se edita correctamente",
-      "time" : {
-        "start" : 1688683245317,
-        "stop" : 1688683245317,
-        "duration" : 0
-      },
-      "status" : "passed",
-      "steps" : [ ],
-      "attachments" : [ ],
-      "parameters" : [ ],
-      "stepsCount" : 0,
-      "hasContent" : false,
       "shouldDisplayMessage" : false,
       "attachmentsCount" : 0
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "stepsCount" : 3,
     "hasContent" : true,
+    "stepsCount" : 3,
     "shouldDisplayMessage" : false,
     "attachmentsCount" : 0
   },
@@ -75,16 +75,16 @@
     "value" : "17320@Erick.main(1)"
   }, {
     "name" : "feature",
-    "value" : "Manejo de pedidos de venta"
+    "value" : "Inicio de sesion"
   }, {
     "name" : "story",
-    "value" : "Editar pedido"
+    "value" : "Inicio de sesión exitoso"
   }, {
     "name" : "suite",
-    "value" : "Manejo de pedidos de venta"
+    "value" : "Inicio de sesion"
   }, {
     "name" : "testClass",
-    "value" : "Editar pedido"
+    "value" : "Inicio de sesión exitoso"
   }, {
     "name" : "framework",
     "value" : "cucumber4jvm"
@@ -93,10 +93,10 @@
     "value" : "java"
   }, {
     "name" : "gherkin_uri",
-    "value" : "file:///C:/Users/LENOVO/Pictures/COLDIAD/proyecto_curso-laboratorio-automotriz-laditec/HACLaditec/src/test/java/features/pedido.feature"
+    "value" : "file:///C:/Users/LENOVO/Pictures/COLDIAD/proyecto_curso-laboratorio-automotriz-laditec/HACLaditec/src/test/java/features/login.feature"
   }, {
     "name" : "package",
-    "value" : "src.test.java.features.pedido_feature.Manejo de pedidos de venta"
+    "value" : "src.test.java.features.login_feature.Inicio de sesion"
   }, {
     "name" : "resultFormat",
     "value" : "allure2"
@@ -111,6 +111,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "cca9a03173fd3616.json",
+  "source" : "a742bbef61657254.json",
   "parameterValues" : [ ]
 }

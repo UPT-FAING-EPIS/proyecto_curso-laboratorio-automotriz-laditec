@@ -1,12 +1,12 @@
 {
-  "uid" : "ec15e393666a0d",
-  "name" : "Agregar pedido",
-  "fullName" : "Manejo de pedidos de venta: Agregar pedido",
-  "historyId" : "c4590db361aba0fc8a8b2f66b0979d85",
+  "uid" : "b26f59836f119d28",
+  "name" : "Listar los repuestos",
+  "fullName" : "Operaciones con Repuestos: Listar los repuestos",
+  "historyId" : "8f25b6956beb17590661c684eee67f47",
   "time" : {
-    "start" : 1688683245080,
-    "stop" : 1688683245131,
-    "duration" : 51
+    "start" : 1688683245413,
+    "stop" : 1688683245439,
+    "duration" : 26
   },
   "status" : "passed",
   "flaky" : false,
@@ -14,55 +14,55 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "Given  un usuario con ID de usuario 1",
+      "name" : "Given  se ha establecido una conexión con la base de datos",
       "time" : {
-        "start" : 1688683245084,
-        "stop" : 1688683245090,
-        "duration" : 6
+        "start" : 1688683245419,
+        "stop" : 1688683245430,
+        "duration" : 11
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "stepsCount" : 0,
       "hasContent" : false,
+      "stepsCount" : 0,
       "shouldDisplayMessage" : false,
       "attachmentsCount" : 0
     }, {
-      "name" : "When  se agrega un pedido con idusuario 1, fecha \"2023-06-13\" y estado \"A\"",
+      "name" : "When  obtengo la lista de repuestos",
       "time" : {
-        "start" : 1688683245091,
-        "stop" : 1688683245130,
-        "duration" : 39
+        "start" : 1688683245430,
+        "stop" : 1688683245438,
+        "duration" : 8
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "stepsCount" : 0,
       "hasContent" : false,
+      "stepsCount" : 0,
       "shouldDisplayMessage" : false,
       "attachmentsCount" : 0
     }, {
-      "name" : "Then  el pedido se agrega correctamente",
+      "name" : "Then  debería recibir una lista de repuestos válida",
       "time" : {
-        "start" : 1688683245130,
-        "stop" : 1688683245131,
-        "duration" : 1
+        "start" : 1688683245439,
+        "stop" : 1688683245439,
+        "duration" : 0
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "stepsCount" : 0,
       "hasContent" : false,
+      "stepsCount" : 0,
       "shouldDisplayMessage" : false,
       "attachmentsCount" : 0
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "stepsCount" : 3,
     "hasContent" : true,
+    "stepsCount" : 3,
     "shouldDisplayMessage" : false,
     "attachmentsCount" : 0
   },
@@ -75,16 +75,16 @@
     "value" : "17320@Erick.main(1)"
   }, {
     "name" : "feature",
-    "value" : "Manejo de pedidos de venta"
+    "value" : "Operaciones con Repuestos"
   }, {
     "name" : "story",
-    "value" : "Agregar pedido"
+    "value" : "Listar los repuestos"
   }, {
     "name" : "suite",
-    "value" : "Manejo de pedidos de venta"
+    "value" : "Operaciones con Repuestos"
   }, {
     "name" : "testClass",
-    "value" : "Agregar pedido"
+    "value" : "Listar los repuestos"
   }, {
     "name" : "framework",
     "value" : "cucumber4jvm"
@@ -93,10 +93,10 @@
     "value" : "java"
   }, {
     "name" : "gherkin_uri",
-    "value" : "file:///C:/Users/LENOVO/Pictures/COLDIAD/proyecto_curso-laboratorio-automotriz-laditec/HACLaditec/src/test/java/features/pedido.feature"
+    "value" : "file:///C:/Users/LENOVO/Pictures/COLDIAD/proyecto_curso-laboratorio-automotriz-laditec/HACLaditec/src/test/java/features/producto.feature"
   }, {
     "name" : "package",
-    "value" : "src.test.java.features.pedido_feature.Manejo de pedidos de venta"
+    "value" : "src.test.java.features.producto_feature.Operaciones con Repuestos"
   }, {
     "name" : "resultFormat",
     "value" : "allure2"
@@ -111,6 +111,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "ec15e393666a0d.json",
+  "source" : "b26f59836f119d28.json",
   "parameterValues" : [ ]
 }

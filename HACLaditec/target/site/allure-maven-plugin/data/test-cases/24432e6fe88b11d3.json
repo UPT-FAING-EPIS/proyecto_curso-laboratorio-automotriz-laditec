@@ -1,5 +1,5 @@
 {
-  "uid" : "85cc7b67cf28d1df",
+  "uid" : "24432e6fe88b11d3",
   "name" : "Agregar un nuevo repuesto",
   "fullName" : "Operaciones con Repuestos: Agregar un nuevo repuesto",
   "historyId" : "6637eb348bbfc42bc021835e0ea7bf7b",
@@ -24,8 +24,8 @@
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "stepsCount" : 0,
       "hasContent" : false,
+      "stepsCount" : 0,
       "shouldDisplayMessage" : false,
       "attachmentsCount" : 0
     }, {
@@ -39,8 +39,8 @@
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "stepsCount" : 0,
       "hasContent" : false,
+      "stepsCount" : 0,
       "shouldDisplayMessage" : false,
       "attachmentsCount" : 0
     }, {
@@ -54,15 +54,15 @@
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "stepsCount" : 0,
       "hasContent" : false,
+      "stepsCount" : 0,
       "shouldDisplayMessage" : false,
       "attachmentsCount" : 0
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "stepsCount" : 3,
     "hasContent" : true,
+    "stepsCount" : 3,
     "shouldDisplayMessage" : false,
     "attachmentsCount" : 0
   },
@@ -135,6 +135,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "85cc7b67cf28d1df.json",
+  "source" : "24432e6fe88b11d3.json",
   "parameterValues" : [ "1", "15", "1", "1", "12", "png", "TEX-11-103 / BOBINA NISSAN VERSA X-TRAIL", "70" ]
 }

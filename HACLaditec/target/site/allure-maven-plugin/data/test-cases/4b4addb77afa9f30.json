@@ -1,12 +1,12 @@
 {
-  "uid" : "f7201451d280f119",
-  "name" : "Inicio de sesión exitoso",
-  "fullName" : "Inicio de sesion: Inicio de sesión exitoso",
-  "historyId" : "40cadfd1fc7b7398f87f087125838c56",
+  "uid" : "4b4addb77afa9f30",
+  "name" : "Obtener un repuesto específico",
+  "fullName" : "Operaciones con Repuestos: Obtener un repuesto específico",
+  "historyId" : "539a9d2817e19c62b407e36773775188",
   "time" : {
-    "start" : 1688683244534,
-    "stop" : 1688683244809,
-    "duration" : 275
+    "start" : 1688683245448,
+    "stop" : 1688683245458,
+    "duration" : 10
   },
   "status" : "passed",
   "flaky" : false,
@@ -14,55 +14,55 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "Given  Soy un usuario registrado en el sistema",
+      "name" : "Given  se ha establecido una conexión con la base de datos",
       "time" : {
-        "start" : 1688683244555,
-        "stop" : 1688683244761,
-        "duration" : 206
+        "start" : 1688683245448,
+        "stop" : 1688683245452,
+        "duration" : 4
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "stepsCount" : 0,
       "hasContent" : false,
+      "stepsCount" : 0,
       "shouldDisplayMessage" : false,
       "attachmentsCount" : 0
     }, {
-      "name" : "When  ingreso con mis credenciales de inicio de sesion validas \"diego12@gmail.com\" y \"123\"",
+      "name" : "When  obtengo el repuesto con id de 1",
       "time" : {
-        "start" : 1688683244774,
-        "stop" : 1688683244804,
-        "duration" : 30
+        "start" : 1688683245453,
+        "stop" : 1688683245457,
+        "duration" : 4
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "stepsCount" : 0,
       "hasContent" : false,
+      "stepsCount" : 0,
       "shouldDisplayMessage" : false,
       "attachmentsCount" : 0
     }, {
-      "name" : "Then  se inicia sesión exitosamente",
+      "name" : "Then  debería recibir los detalles del repuesto",
       "time" : {
-        "start" : 1688683244804,
-        "stop" : 1688683244807,
-        "duration" : 3
+        "start" : 1688683245457,
+        "stop" : 1688683245458,
+        "duration" : 1
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "stepsCount" : 0,
       "hasContent" : false,
+      "stepsCount" : 0,
       "shouldDisplayMessage" : false,
       "attachmentsCount" : 0
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "stepsCount" : 3,
     "hasContent" : true,
+    "stepsCount" : 3,
     "shouldDisplayMessage" : false,
     "attachmentsCount" : 0
   },
@@ -75,16 +75,16 @@
     "value" : "17320@Erick.main(1)"
   }, {
     "name" : "feature",
-    "value" : "Inicio de sesion"
+    "value" : "Operaciones con Repuestos"
   }, {
     "name" : "story",
-    "value" : "Inicio de sesión exitoso"
+    "value" : "Obtener un repuesto específico"
   }, {
     "name" : "suite",
-    "value" : "Inicio de sesion"
+    "value" : "Operaciones con Repuestos"
   }, {
     "name" : "testClass",
-    "value" : "Inicio de sesión exitoso"
+    "value" : "Obtener un repuesto específico"
   }, {
     "name" : "framework",
     "value" : "cucumber4jvm"
@@ -93,10 +93,10 @@
     "value" : "java"
   }, {
     "name" : "gherkin_uri",
-    "value" : "file:///C:/Users/LENOVO/Pictures/COLDIAD/proyecto_curso-laboratorio-automotriz-laditec/HACLaditec/src/test/java/features/login.feature"
+    "value" : "file:///C:/Users/LENOVO/Pictures/COLDIAD/proyecto_curso-laboratorio-automotriz-laditec/HACLaditec/src/test/java/features/producto.feature"
   }, {
     "name" : "package",
-    "value" : "src.test.java.features.login_feature.Inicio de sesion"
+    "value" : "src.test.java.features.producto_feature.Operaciones con Repuestos"
   }, {
     "name" : "resultFormat",
     "value" : "allure2"
@@ -111,6 +111,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "f7201451d280f119.json",
+  "source" : "4b4addb77afa9f30.json",
   "parameterValues" : [ ]
 }

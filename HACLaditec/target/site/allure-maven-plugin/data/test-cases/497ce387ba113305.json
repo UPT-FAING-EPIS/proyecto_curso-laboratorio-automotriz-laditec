@@ -1,12 +1,12 @@
 {
-  "uid" : "728fdad4b124b407",
-  "name" : "Listar pedidos",
-  "fullName" : "Manejo de pedidos de venta: Listar pedidos",
-  "historyId" : "480268532eff7d1b5d70520d1fbe43ed",
+  "uid" : "497ce387ba113305",
+  "name" : "Editar pedido",
+  "fullName" : "Manejo de pedidos de venta: Editar pedido",
+  "historyId" : "f35d58d965d8b99a967a9c6d31c0e84e",
   "time" : {
-    "start" : 1688683245148,
-    "stop" : 1688683245276,
-    "duration" : 128
+    "start" : 1688683245310,
+    "stop" : 1688683245318,
+    "duration" : 8
   },
   "status" : "passed",
   "flaky" : false,
@@ -14,55 +14,55 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "Given  se ha agregado un pedido",
+      "name" : "Given  un usuario con ID de usuario 1",
       "time" : {
-        "start" : 1688683245148,
-        "stop" : 1688683245214,
-        "duration" : 66
+        "start" : 1688683245311,
+        "stop" : 1688683245314,
+        "duration" : 3
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "stepsCount" : 0,
       "hasContent" : false,
+      "stepsCount" : 0,
       "shouldDisplayMessage" : false,
       "attachmentsCount" : 0
     }, {
-      "name" : "When  se lista los pedidos",
+      "name" : "When  se edita el pedido con ID de pedido 1, nueva fecha \"2023-06-14\" y nuevo estado \"P\"",
       "time" : {
-        "start" : 1688683245216,
-        "stop" : 1688683245274,
-        "duration" : 58
+        "start" : 1688683245315,
+        "stop" : 1688683245316,
+        "duration" : 1
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "stepsCount" : 0,
       "hasContent" : false,
+      "stepsCount" : 0,
       "shouldDisplayMessage" : false,
       "attachmentsCount" : 0
     }, {
-      "name" : "Then  se muestra la lista de pedidos",
+      "name" : "Then  el pedido se edita correctamente",
       "time" : {
-        "start" : 1688683245275,
-        "stop" : 1688683245275,
+        "start" : 1688683245317,
+        "stop" : 1688683245317,
         "duration" : 0
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "stepsCount" : 0,
       "hasContent" : false,
+      "stepsCount" : 0,
       "shouldDisplayMessage" : false,
       "attachmentsCount" : 0
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "stepsCount" : 3,
     "hasContent" : true,
+    "stepsCount" : 3,
     "shouldDisplayMessage" : false,
     "attachmentsCount" : 0
   },
@@ -78,13 +78,13 @@
     "value" : "Manejo de pedidos de venta"
   }, {
     "name" : "story",
-    "value" : "Listar pedidos"
+    "value" : "Editar pedido"
   }, {
     "name" : "suite",
     "value" : "Manejo de pedidos de venta"
   }, {
     "name" : "testClass",
-    "value" : "Listar pedidos"
+    "value" : "Editar pedido"
   }, {
     "name" : "framework",
     "value" : "cucumber4jvm"
@@ -111,6 +111,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "728fdad4b124b407.json",
+  "source" : "497ce387ba113305.json",
   "parameterValues" : [ ]
 }

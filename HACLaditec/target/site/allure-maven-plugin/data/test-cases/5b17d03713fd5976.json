@@ -1,12 +1,12 @@
 {
-  "uid" : "fe48717061d8d01f",
-  "name" : "Obtener un repuesto específico",
-  "fullName" : "Operaciones con Repuestos: Obtener un repuesto específico",
-  "historyId" : "539a9d2817e19c62b407e36773775188",
+  "uid" : "5b17d03713fd5976",
+  "name" : "Ver pedidos de una boleta",
+  "fullName" : "Manejo de pedidos de venta: Ver pedidos de una boleta",
+  "historyId" : "9cdb781baa9f568add6df3d347ccad17",
   "time" : {
-    "start" : 1688683245448,
-    "stop" : 1688683245458,
-    "duration" : 10
+    "start" : 1688683245292,
+    "stop" : 1688683245300,
+    "duration" : 8
   },
   "status" : "passed",
   "flaky" : false,
@@ -14,55 +14,55 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "Given  se ha establecido una conexión con la base de datos",
+      "name" : "Given  un usuario con ID de usuario 1",
       "time" : {
-        "start" : 1688683245448,
-        "stop" : 1688683245452,
+        "start" : 1688683245293,
+        "stop" : 1688683245297,
         "duration" : 4
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "stepsCount" : 0,
       "hasContent" : false,
+      "stepsCount" : 0,
       "shouldDisplayMessage" : false,
       "attachmentsCount" : 0
     }, {
-      "name" : "When  obtengo el repuesto con id de 1",
+      "name" : "When  se visualizan los pedidos de la boleta",
       "time" : {
-        "start" : 1688683245453,
-        "stop" : 1688683245457,
-        "duration" : 4
-      },
-      "status" : "passed",
-      "steps" : [ ],
-      "attachments" : [ ],
-      "parameters" : [ ],
-      "stepsCount" : 0,
-      "hasContent" : false,
-      "shouldDisplayMessage" : false,
-      "attachmentsCount" : 0
-    }, {
-      "name" : "Then  debería recibir los detalles del repuesto",
-      "time" : {
-        "start" : 1688683245457,
-        "stop" : 1688683245458,
+        "start" : 1688683245298,
+        "stop" : 1688683245299,
         "duration" : 1
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "stepsCount" : 0,
       "hasContent" : false,
+      "stepsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
+    }, {
+      "name" : "Then  se muestra la lista de pedidos de la boleta",
+      "time" : {
+        "start" : 1688683245299,
+        "stop" : 1688683245300,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : false,
+      "stepsCount" : 0,
       "shouldDisplayMessage" : false,
       "attachmentsCount" : 0
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "stepsCount" : 3,
     "hasContent" : true,
+    "stepsCount" : 3,
     "shouldDisplayMessage" : false,
     "attachmentsCount" : 0
   },
@@ -75,16 +75,16 @@
     "value" : "17320@Erick.main(1)"
   }, {
     "name" : "feature",
-    "value" : "Operaciones con Repuestos"
+    "value" : "Manejo de pedidos de venta"
   }, {
     "name" : "story",
-    "value" : "Obtener un repuesto específico"
+    "value" : "Ver pedidos de una boleta"
   }, {
     "name" : "suite",
-    "value" : "Operaciones con Repuestos"
+    "value" : "Manejo de pedidos de venta"
   }, {
     "name" : "testClass",
-    "value" : "Obtener un repuesto específico"
+    "value" : "Ver pedidos de una boleta"
   }, {
     "name" : "framework",
     "value" : "cucumber4jvm"
@@ -93,10 +93,10 @@
     "value" : "java"
   }, {
     "name" : "gherkin_uri",
-    "value" : "file:///C:/Users/LENOVO/Pictures/COLDIAD/proyecto_curso-laboratorio-automotriz-laditec/HACLaditec/src/test/java/features/producto.feature"
+    "value" : "file:///C:/Users/LENOVO/Pictures/COLDIAD/proyecto_curso-laboratorio-automotriz-laditec/HACLaditec/src/test/java/features/pedido.feature"
   }, {
     "name" : "package",
-    "value" : "src.test.java.features.producto_feature.Operaciones con Repuestos"
+    "value" : "src.test.java.features.pedido_feature.Manejo de pedidos de venta"
   }, {
     "name" : "resultFormat",
     "value" : "allure2"
@@ -111,6 +111,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "fe48717061d8d01f.json",
+  "source" : "5b17d03713fd5976.json",
   "parameterValues" : [ ]
 }

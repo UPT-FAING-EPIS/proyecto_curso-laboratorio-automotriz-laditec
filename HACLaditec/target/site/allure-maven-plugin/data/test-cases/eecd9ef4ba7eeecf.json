@@ -1,12 +1,12 @@
 {
-  "uid" : "357b488cad314df3",
-  "name" : "Ver pedidos de una boleta",
-  "fullName" : "Manejo de pedidos de venta: Ver pedidos de una boleta",
-  "historyId" : "9cdb781baa9f568add6df3d347ccad17",
+  "uid" : "eecd9ef4ba7eeecf",
+  "name" : "Listar usuario",
+  "fullName" : "Manejo de usuarios: Listar usuario",
+  "historyId" : "78403944f54079966f7094fd57b74d2d",
   "time" : {
-    "start" : 1688683245292,
-    "stop" : 1688683245300,
-    "duration" : 8
+    "start" : 1688683245699,
+    "stop" : 1688683245745,
+    "duration" : 46
   },
   "status" : "passed",
   "flaky" : false,
@@ -14,55 +14,55 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "Given  un usuario con ID de usuario 1",
+      "name" : "Given  se ha agregado un usuario",
       "time" : {
-        "start" : 1688683245293,
-        "stop" : 1688683245297,
+        "start" : 1688683245700,
+        "stop" : 1688683245740,
+        "duration" : 40
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
+    }, {
+      "name" : "When  se lista los usuarios",
+      "time" : {
+        "start" : 1688683245740,
+        "stop" : 1688683245744,
         "duration" : 4
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "stepsCount" : 0,
       "hasContent" : false,
+      "stepsCount" : 0,
       "shouldDisplayMessage" : false,
       "attachmentsCount" : 0
     }, {
-      "name" : "When  se visualizan los pedidos de la boleta",
+      "name" : "Then  se muestra la lista de usuarios",
       "time" : {
-        "start" : 1688683245298,
-        "stop" : 1688683245299,
-        "duration" : 1
+        "start" : 1688683245744,
+        "stop" : 1688683245744,
+        "duration" : 0
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "stepsCount" : 0,
       "hasContent" : false,
-      "shouldDisplayMessage" : false,
-      "attachmentsCount" : 0
-    }, {
-      "name" : "Then  se muestra la lista de pedidos de la boleta",
-      "time" : {
-        "start" : 1688683245299,
-        "stop" : 1688683245300,
-        "duration" : 1
-      },
-      "status" : "passed",
-      "steps" : [ ],
-      "attachments" : [ ],
-      "parameters" : [ ],
       "stepsCount" : 0,
-      "hasContent" : false,
       "shouldDisplayMessage" : false,
       "attachmentsCount" : 0
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "stepsCount" : 3,
     "hasContent" : true,
+    "stepsCount" : 3,
     "shouldDisplayMessage" : false,
     "attachmentsCount" : 0
   },
@@ -75,16 +75,16 @@
     "value" : "17320@Erick.main(1)"
   }, {
     "name" : "feature",
-    "value" : "Manejo de pedidos de venta"
+    "value" : "Manejo de usuarios"
   }, {
     "name" : "story",
-    "value" : "Ver pedidos de una boleta"
+    "value" : "Listar usuario"
   }, {
     "name" : "suite",
-    "value" : "Manejo de pedidos de venta"
+    "value" : "Manejo de usuarios"
   }, {
     "name" : "testClass",
-    "value" : "Ver pedidos de una boleta"
+    "value" : "Listar usuario"
   }, {
     "name" : "framework",
     "value" : "cucumber4jvm"
@@ -93,10 +93,10 @@
     "value" : "java"
   }, {
     "name" : "gherkin_uri",
-    "value" : "file:///C:/Users/LENOVO/Pictures/COLDIAD/proyecto_curso-laboratorio-automotriz-laditec/HACLaditec/src/test/java/features/pedido.feature"
+    "value" : "file:///C:/Users/LENOVO/Pictures/COLDIAD/proyecto_curso-laboratorio-automotriz-laditec/HACLaditec/src/test/java/features/usuario.feature"
   }, {
     "name" : "package",
-    "value" : "src.test.java.features.pedido_feature.Manejo de pedidos de venta"
+    "value" : "src.test.java.features.usuario_feature.Manejo de usuarios"
   }, {
     "name" : "resultFormat",
     "value" : "allure2"
@@ -111,6 +111,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "357b488cad314df3.json",
+  "source" : "eecd9ef4ba7eeecf.json",
   "parameterValues" : [ ]
 }

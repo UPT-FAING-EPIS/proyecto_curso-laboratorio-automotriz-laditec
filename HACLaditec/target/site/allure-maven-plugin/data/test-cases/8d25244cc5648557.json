@@ -1,12 +1,12 @@
 {
-  "uid" : "b38f79350320b74c",
-  "name" : "Listar usuario",
-  "fullName" : "Manejo de usuarios: Listar usuario",
-  "historyId" : "78403944f54079966f7094fd57b74d2d",
+  "uid" : "8d25244cc5648557",
+  "name" : "Agregar usuario",
+  "fullName" : "Manejo de usuarios: Agregar usuario",
+  "historyId" : "7b8bb636402b872bff7882a8551ed173",
   "time" : {
-    "start" : 1688683245699,
-    "stop" : 1688683245745,
-    "duration" : 46
+    "start" : 1688683245627,
+    "stop" : 1688683245690,
+    "duration" : 63
   },
   "status" : "passed",
   "flaky" : false,
@@ -14,55 +14,55 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "Given  se ha agregado un usuario",
+      "name" : "Given  un usuario con idusuario 23",
       "time" : {
-        "start" : 1688683245700,
-        "stop" : 1688683245740,
-        "duration" : 40
+        "start" : 1688683245629,
+        "stop" : 1688683245638,
+        "duration" : 9
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "stepsCount" : 0,
       "hasContent" : false,
+      "stepsCount" : 0,
       "shouldDisplayMessage" : false,
       "attachmentsCount" : 0
     }, {
-      "name" : "When  se lista los usuarios",
+      "name" : "When  se agrega un usuario con idusuario 23",
       "time" : {
-        "start" : 1688683245740,
-        "stop" : 1688683245744,
-        "duration" : 4
+        "start" : 1688683245639,
+        "stop" : 1688683245689,
+        "duration" : 50
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "stepsCount" : 0,
       "hasContent" : false,
+      "stepsCount" : 0,
       "shouldDisplayMessage" : false,
       "attachmentsCount" : 0
     }, {
-      "name" : "Then  se muestra la lista de usuarios",
+      "name" : "Then  debo ver un mensaje de exito que indica que el usuario ha sido creado",
       "time" : {
-        "start" : 1688683245744,
-        "stop" : 1688683245744,
-        "duration" : 0
+        "start" : 1688683245689,
+        "stop" : 1688683245690,
+        "duration" : 1
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "stepsCount" : 0,
       "hasContent" : false,
+      "stepsCount" : 0,
       "shouldDisplayMessage" : false,
       "attachmentsCount" : 0
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "stepsCount" : 3,
     "hasContent" : true,
+    "stepsCount" : 3,
     "shouldDisplayMessage" : false,
     "attachmentsCount" : 0
   },
@@ -78,13 +78,13 @@
     "value" : "Manejo de usuarios"
   }, {
     "name" : "story",
-    "value" : "Listar usuario"
+    "value" : "Agregar usuario"
   }, {
     "name" : "suite",
     "value" : "Manejo de usuarios"
   }, {
     "name" : "testClass",
-    "value" : "Listar usuario"
+    "value" : "Agregar usuario"
   }, {
     "name" : "framework",
     "value" : "cucumber4jvm"
@@ -111,6 +111,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "b38f79350320b74c.json",
+  "source" : "8d25244cc5648557.json",
   "parameterValues" : [ ]
 }

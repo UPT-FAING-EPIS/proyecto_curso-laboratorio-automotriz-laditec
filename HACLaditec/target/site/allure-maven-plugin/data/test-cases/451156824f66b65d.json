@@ -1,5 +1,5 @@
 {
-  "uid" : "c56aec39c11c987b",
+  "uid" : "451156824f66b65d",
   "name" : "Agregar un nuevo repuesto",
   "fullName" : "Operaciones con Repuestos: Agregar un nuevo repuesto",
   "historyId" : "68dfc806d4712369bad4b667e61498b5",
@@ -24,8 +24,8 @@
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "stepsCount" : 0,
       "hasContent" : false,
+      "stepsCount" : 0,
       "shouldDisplayMessage" : false,
       "attachmentsCount" : 0
     }, {
@@ -39,8 +39,8 @@
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "stepsCount" : 0,
       "hasContent" : false,
+      "stepsCount" : 0,
       "shouldDisplayMessage" : false,
       "attachmentsCount" : 0
     }, {
@@ -54,15 +54,15 @@
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "stepsCount" : 0,
       "hasContent" : false,
+      "stepsCount" : 0,
       "shouldDisplayMessage" : false,
       "attachmentsCount" : 0
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "stepsCount" : 3,
     "hasContent" : true,
+    "stepsCount" : 3,
     "shouldDisplayMessage" : false,
     "attachmentsCount" : 0
   },
@@ -135,6 +135,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "c56aec39c11c987b.json",
+  "source" : "451156824f66b65d.json",
   "parameterValues" : [ "1", "9", "1", "1", "10", "png", "Juego de 4 piezas de inyectores - Nissan", "180" ]
 }
