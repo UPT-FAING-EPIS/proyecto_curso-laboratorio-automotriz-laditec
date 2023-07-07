@@ -62,6 +62,8 @@ jobs:
 
 ![Captura de pantalla 2023-07-07 131806](https://github.com/UPT-FAING-EPIS/proyecto_curso-laboratorio-automotriz-laditec/assets/102819429/53dd5d02-fd76-46d3-89fa-2a8cc6c1092d)
 
+# Reporte:
 
 
+![e6404d05-f3df-4c47-9f9f-6453d5a79088](https://github.com/UPT-FAING-EPIS/proyecto_curso-laboratorio-automotriz-laditec/assets/102819429/28af759d-ad42-4623-9aad-7af3b7a6d4e2)
 
